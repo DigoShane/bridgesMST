@@ -1,0 +1,545 @@
+! This file is part of P3DFFT library
+
+! Title: P3DFFT library
+
+! Authors: Dmitry Pekurovsky
+
+! Copyright (c) 2006-2019 
+
+! The Regents of the University of California.
+
+! All Rights Reserved.                        
+
+ 
+
+!    Permission to use, copy, modify and  distribute  any part
+
+!    of this software for  educational,  research  and  non-profit
+
+!    purposes, by individuals or non-profit organizations,
+
+!    without fee,  and  without a written  agreement is
+
+!    hereby granted,  provided  that the  above  copyright notice,
+
+!    this paragraph  and the following  three  paragraphs appear in
+
+!    all copies.       
+
+ 
+
+!    For-profit organizations desiring to use this software and others
+
+!    wishing to incorporate this  software into commercial
+
+!    products or use it for  commercial  purposes should contact the:    
+
+!          Office of Innovation & Commercialization 
+
+!          University of California San Diego
+
+!          9500 Gilman Drive,  La Jolla,  California, 92093-0910        
+
+!          Phone: (858) 534-5815
+
+!          E-mail: innovation@ucsd.edu
+
+ 
+
+!    IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE
+
+!    TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR    
+
+!    CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, ARISING OUT
+
+!    OF THE USE OF THIS SOFTWARE, EVEN IF THE UNIVERSITY OF
+
+!    CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+
+!    DAMAGE.
+
+ 
+
+!    THE SOFTWARE PROVIDED HEREUNDER IS ON AN "AS IS" BASIS, AND
+
+!    THE UNIVERSITY OF CALIFORNIA HAS NO OBLIGATIONS TO PROVIDE        
+
+!    MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS. 
+
+!    THE UNIVERSITY OF CALIFORNIA MAKES NO REPRESENTATIONS AND    
+
+!    EXTENDS NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR
+
+!    IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+
+!    OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR
+
+!    THAT THE USE OF THE MATERIAL WILL NOT INFRINGE ANY PATENT,        
+
+!    TRADEMARK OR OTHER RIGHTS.
+!
+!
+!----------------------------------------------------------------------------
+
+!========================================================
+! Transpose Y and Z pencils
+! Assume Stride1 data structure
+
+      subroutine fcomm2_trans_many(source,dest,buf3,dim_out,nv,op,t,tc)
+!========================================================
+
+      use fft_spec
+      implicit none
+
+! Assume stride1
+      integer nz,dim_out
+      complex(p3dfft_type) source(ny_fft,iisize,kjsize,nv)
+      complex(p3dfft_type) dest(dim_out,nv)
+      complex(p3dfft_type) buf3(nz_fft,jjsize)
+
+      real(r8) t,tc
+      integer x,z,y,i,ierr,xs,ys,y2,z2,iy,iz,ix,x2,n,sz,l,dny,dnz,nv,j
+      integer(i8) position,pos1,pos0,pos2
+      character(len=3) op
+      integer sndcnts(0:jproc-1)
+      integer rcvcnts(0:jproc-1)
+      integer sndstrt(0:jproc-1)
+      integer rcvstrt(0:jproc-1)
+
+
+! Pack send buffers for exchanging y and z for all x at once
+
+
+      tc = tc - MPI_Wtime()
+      call pack_fcomm2_trans_many(buf1,source,nv)
+
+
+      tc = tc + MPI_Wtime()
+      t = t - MPI_Wtime()
+
+#ifdef USE_EVEN
+      call mpi_alltoall(buf1,KfCntMax*nv, mpi_byte, buf2,KfCntMax*nv, mpi_byte,mpi_comm_col,ierr)
+#else
+! Exchange y-z buffers in columns of processors
+
+      sndcnts = KfSndCnts * nv
+      sndstrt = KfSndStrt * nv
+      rcvcnts =KfRcvCnts * nv
+      rcvstrt = KfRcvStrt * nv
+
+      call mpi_alltoallv(buf1,SndCnts, SndStrt,mpi_byte,buf2,RcvCnts, RcvStrt,mpi_byte,mpi_comm_col,ierr)
+#endif
+
+      t = MPI_Wtime() + t
+
+     if(jjsize .gt. 0) then
+
+      tc = - MPI_Wtime() + tc
+
+      do j=1,nv
+         call unpack_fcomm2_trans(dest(1,j),buf2,buf3,j,nv,op)
+      enddo
+
+      tc = tc + MPI_Wtime()
+
+     endif
+
+      return
+      end subroutine
+
+      subroutine pack_fcomm2_trans_many(sndbuf,source,nv)
+
+      use fft_spec
+      implicit none
+
+      complex(p3dfft_type) source(ny_fft,iisize,kjsize,nv)
+      complex(p3dfft_type) sndbuf(iisize*kjsize*ny_fft*nv)
+      integer nv,j,i,x,y,z,pos0,position,dny,pos1
+
+      dny = ny_fft-nyc
+!$OMP PARALLEL DO private(i,j,pos0,pos1,position,x,y,z)
+      do i=0,jproc-1
+#ifdef USE_EVEN
+         pos0 = i * nv *KfCntMax/(p3dfft_type*2)  + 1
+#else
+         pos0 = KfSndStrt(i)*nv /(p3dfft_type*2)+ 1
+#endif
+
+        do j=1,nv
+
+! Pack the sendbuf, omitting the center ny-nyc elements in Y dimension
+
+! If clearly in the first half of ny
+           pos1 = pos0 + (j-1)*jjsz(i)*iisize*kjsize
+   	   do z=1,kjsize
+              position = pos1 +(z-1)*jjsz(i)*iisize
+              do x=1,iisize
+! First set of significant Fourier modes (zero and positive, total a little more than half)
+                 do y=jjst(i),min(jjen(i),nycph)
+                    sndbuf(position) = source(y,x,z,j)
+                    position = position+1
+                 enddo
+! Second set of Fourier modes (negative)
+                 do y=max(jjst(i)+dny,ny_fft-nyhc+1),jjen(i)+dny
+                    sndbuf(position) = source(y,x,z,j)
+                    position = position+1
+                 enddo
+              enddo
+           enddo
+         enddo
+      enddo
+
+      end subroutine
+
+      subroutine unpack_fcomm2_trans(dest,recvbuf,buf3,j,nv,op)
+
+      use fft_spec
+      implicit none
+
+      complex(p3dfft_type) dest(nzc,jjsize,iisize)
+      complex(p3dfft_type) buf3(nz_fft,jjsize)
+#ifdef USE_EVEN
+      complex(p3dfft_type) recvbuf(KfCntMax*nv*jproc/(p3dfft_type*2))
+#else
+      complex(p3dfft_type) recvbuf(nz_fft*jjsize*iisize*nv)
+#endif
+      integer x,z,y,i,ierr,xs,ys,y2,z2,iy,iz,ix,x2,n,sz,l,dny,dnz,nv,j,nz,dim_out
+      integer(i8) position,pos1,pos0,pos2
+      character(len=3) op
+
+      nz = nz_fft
+      if(nz .ne. nzc) then
+	dnz = nz - nzc
+
+
+      if(op(3:3) == '0' .or. op(3:3) == 'n') then
+
+!$OMP PARALLEL DO private(i,pos0,pos1,pos2,position,x,y,z,iy,y2,iz,z2) collapse(2)
+      do x=1,iisize
+
+         do i=0,jproc-1
+
+	      pos0 = (x-1)*jjsize
+
+#ifdef USE_EVEN
+ 	      pos1 = pos0 + i * nv * KfCntMax / (p3dfft_type*2) + (j-1)*iisize*jjsize*kjsz(i)
+#else
+ 	      pos1 = pos0 + nv * KfRcvStrt(i) / (p3dfft_type*2) + (j-1)*iisize*jjsize*kjsz(i)
+#endif
+
+           if(kjen(i) .lt. nzhc .or. kjst(i) .gt. nzhc+1) then
+! Just copy the data
+              do z=kjst(i),kjen(i),NBz
+                 z2 = min(z+NBz-1,kjen(i))
+
+                 do y=1,jjsize,NBy2
+                    y2 = min(y+NBy2-1,jjsize)
+                    pos2 = pos1 + y
+
+                    do iz=z,z2
+                       position = pos2
+                       do iy=y,y2
+! Here we are sure that dest and buf are different
+                         dest(iz,iy,x) = recvbuf(position)
+                         position = position +1
+                       enddo
+                       pos2 = pos2 + iisize * jjsize
+                    enddo
+                 enddo
+                 pos1 = pos1 + iisize*jjsize*NBz
+              enddo
+
+	    else
+! Copy some data, then insert zeros to restore full dimension, then again
+! copy some data if needed
+               do z=kjst(i),nzhc,NBz
+       	          z2 = min(z+NBz-1,nzhc)
+
+                 do y=1,jjsize,NBy2
+                    y2 = min(y+NBy2-1,jjsize)
+                    pos2 = pos1 + y
+
+                    do iz=z,z2
+                       position = pos2
+                       do iy=y,y2
+! Here we are sure that dest and buf are different
+                         dest(iz,iy,x) = recvbuf(position)
+                         position = position +1
+                       enddo
+                       pos2 = pos2 + iisize * jjsize
+                    enddo
+                 enddo
+                 pos1 = pos1 + iisize*jjsize*NBz
+              enddo
+
+	      pos0 = pos0 + iisize*jjsize*dnz
+#ifdef USE_EVEN
+ 	      pos1 = pos0 + i * nv * KfCntMax / (p3dfft_type*2) + (j-1)*iisize*jjsize*kjsz(i)
+#else
+ 	      pos1 = pos0 + nv * KfRcvStrt(i) / (p3dfft_type*2) + (j-1)*iisize*jjsize*kjsz(i)
+#endif
+
+	      do z=nzhc+1,kjen(i),NBz
+                 z2 = min(z+NBz-1,kjen(i))
+
+                 do y=1,jjsize,NBy2
+                    y2 = min(y+NBy2-1,jjsize)
+                    pos2 = pos1 + y
+
+                    do iz=z,z2
+                       position = pos2
+                       do iy=y,y2
+! Here we are sure that dest and buf are different
+                         dest(iz,iy,x) = recvbuf(position)
+                         position = position +1
+                       enddo
+                       pos2 = pos2 + iisize * jjsize
+                    enddo
+                 enddo
+                 pos1 = pos1 + iisize*jjsize*NBz
+              enddo
+	   endif
+
+	enddo
+
+       enddo
+
+     else
+
+!$OMP PARALLEL DO private(i,pos0,pos1,pos2,position,x,y,z,iy,y2,iz,z2,buf3)
+       do x=1,iisize
+
+	pos0 = (x-1)*jjsize
+
+         do i=0,jproc-1
+
+#ifdef USE_EVEN
+            pos1 = pos0 + (i * nv +j-1) *KfCntMax / (p3dfft_type*2) + (j-1)*iisize*jjsize*kjsz(i)
+#else
+	    pos1 = pos0 + nv * KfRcvStrt(i) / (p3dfft_type*2) + (j-1)*iisize*jjsize*kjsz(i)
+#endif
+
+            do z=kjst(i),kjen(i),NBz
+               z2 = min(z+NBz-1,kjen(i))
+
+               do y=1,jjsize,NBy2
+                  y2 = min(y+NBy2-1,jjsize)
+
+                  pos2 = pos1 +y
+
+                  do iz=z,z2
+                     position = pos2
+                     do iy=y,y2
+! Here we are sure that dest and buf are different
+                        buf3(iz,iy) = recvbuf(position)
+                        position = position + 1
+                     enddo
+                     pos2 = pos2 + iisize * jjsize
+                  enddo
+               enddo
+               pos1 = pos1 + jjsize*iisize*NBz
+           enddo
+       enddo
+
+	if(op(3:3) == 't' .or. op(3:3) == 'f') then
+             call exec_f_c2_same(buf3, 1,nz_fft, &
+			  buf3, 1,nz_fft,nz_fft,jjsize)
+	else if(op(3:3) == 'c') then
+             call exec_ctrans_r2_complex_same(buf3, 2,2*nz_fft, &
+			  buf3, 2,2*nz_fft,nz_fft,jjsize)
+	else if(op(3:3) == 's') then
+             call exec_strans_r2_complex_same(buf3, 2,2*nz_fft, &
+		          buf3, 2,2*nz_fft,nz_fft,jjsize)
+ 	else
+	   print *,taskid,'Unknown transform type: ',op(3:3)
+	   call MPI_abort(MPI_COMM_WORLD,ierr)
+	endif
+
+	do y=1,jjsize
+	   do z=1,nzhc
+	      dest(z,y,x) = buf3(z,y)
+	   enddo
+	   do z=nzhc+1,nzc
+	      dest(z,y,x) = buf3(z+dnz,y)
+	   enddo
+	enddo
+
+      enddo
+      endif
+      else  ! if nz = nzc
+
+      if(op(3:3) == '0' .or. op(3:3) == 'n') then
+
+
+!$OMP PARALLEL DO private(i,pos0,pos1,pos2,position,x,y,z,iy,y2,iz,z2) collapse(2)
+      do x=1,iisize
+
+         do i=0,jproc-1
+
+	   pos0 = (x-1)*jjsize
+
+#ifdef USE_EVEN
+           pos1 = pos0 + (i * nv +j-1)*KfCntMax / (p3dfft_type*2) + (j-1)*iisize*jjsize*kjsz(i)
+#else
+	   pos1 = pos0 + nv * KfRcvStrt(i) / (p3dfft_type*2) + (j-1)*iisize*jjsize*kjsz(i)
+#endif
+
+            do z=kjst(i),kjen(i),NBz
+               z2 = min(z+NBz-1,kjen(i))
+
+               do y=1,jjsize,NBy2
+                  y2 = min(y+NBy2-1,jjsize)
+
+                  pos2 = pos1 +y
+
+                  do iz=z,z2
+                     position = pos2
+                     do iy=y,y2
+! Here we are sure that dest and buf are different
+                        dest(iz,iy,x) = recvbuf(position)
+                        position = position + 1
+                     enddo
+                     pos2 = pos2 + iisize * jjsize
+                  enddo
+               enddo
+               pos1 = pos1 + jjsize*iisize*NBz
+           enddo
+        enddo
+      enddo
+
+      else
+
+!$OMP PARALLEL DO private(i,pos0,pos1,pos2,position,x,y,z,iy,y2,iz,z2,buf3)
+      do x=1,iisize
+
+         pos0 = (x-1)*jjsize
+
+         do i=0,jproc-1
+
+#ifdef USE_EVEN
+            pos1 = pos0 + i * nv *KfCntMax / (p3dfft_type*2) + (j-1)*iisize*jjsize*kjsz(i)
+#else
+	   pos1 = pos0 + nv * KfRcvStrt(i) / (p3dfft_type*2) + (j-1)*iisize*jjsize*kjsz(i)
+#endif
+
+            do z=kjst(i),kjen(i),NBz
+               z2 = min(z+NBz-1,kjen(i))
+
+               do y=1,jjsize,NBy2
+                  y2 = min(y+NBy2-1,jjsize)
+
+                  pos2 = pos1 +y
+
+                  do iz=z,z2
+                     position = pos2
+                     do iy=y,y2
+! Here we are sure that dest and buf are different
+                        buf3(iz,iy) = recvbuf(position)
+                        position = position + 1
+                     enddo
+                     pos2 = pos2 + iisize * jjsize
+                  enddo
+               enddo
+               pos1 = pos1 + jjsize*iisize*NBz
+            enddo
+         enddo
+
+	if(op(3:3) == 't' .or. op(3:3) == 'f') then
+             call exec_f_c2_dif(buf3, 1,nz_fft, &
+			  dest(1,1,x), 1,nz_fft,nz_fft,jjsize)
+	else if(op(3:3) == 'c') then
+             call exec_ctrans_r2_complex_dif(buf3, 2,2*nz_fft, &
+			  dest(1,1,x), 2,2*nz_fft,nz_fft,jjsize)
+	else if(op(3:3) == 's') then
+             call exec_strans_r2_complex_dif(buf3, 2,2*nz_fft, &
+		          dest(1,1,x), 2,2*nz_fft,nz_fft,jjsize)
+ 	else
+	   print *,taskid,'Unknown transform type: ',op(3:3)
+	   call MPI_abort(MPI_COMM_WORLD,ierr)
+	endif
+
+      enddo
+
+      endif
+      endif
+
+      return
+      end subroutine
+
+      subroutine fcomm2_trans(source,dest,buf3,op,t,tc)
+!========================================================
+
+      use fft_spec
+      implicit none
+
+! Assume stride1
+      complex(p3dfft_type) source(ny_fft,iisize,kjsize)
+      complex(p3dfft_type) dest(nzc,jjsize,iisize)
+      complex(p3dfft_type) buf3(nz_fft,jjsize)
+
+      real(r8) t,tc
+      integer x,z,y,i,ierr,xs,ys,y2,z2,iy,iz,ix,x2,n,sz,l,dny,dnz
+      integer(i8) position,pos1,pos0
+      character(len=3) op
+
+
+! Pack send buffers for exchanging y and z for all x at once
+
+      dny = ny_fft-nyc
+
+      tc = tc - MPI_Wtime()
+
+!$OMP PARALLEL DO private(i,pos0,position,x,y,z)
+     do i=0,jproc-1
+#ifdef USE_EVEN
+         pos0 = i*KfCntMax/(p3dfft_type*2)  + 1
+#else
+         pos0 = KfSndStrt(i)/(p3dfft_type*2)+ 1
+#endif
+
+! Pack the sendbuf, omitting the center ny-nyc elements in Y dimension
+
+         do z=1,kjsize
+            position = pos0 +(z-1)*jjsz(i)*iisize
+            do x=1,iisize
+! First set of significant Fourier modes (zero and positive, total a little more than half)
+               do y=jjst(i),min(jjen(i),nycph)
+                  buf1(position) = source(y,x,z)
+                  position = position+1
+               enddo
+! Second set of Fourier modes (negative)
+               do y=max(jjst(i)+dny,ny_fft-nyhc+1),jjen(i)+dny
+                  buf1(position) = source(y,x,z)
+                  position = position+1
+               enddo
+
+            enddo
+         enddo
+
+      enddo	    
+
+      tc = tc + MPI_Wtime()
+      t = t - MPI_Wtime()
+
+#ifdef USE_EVEN
+      call mpi_alltoall(buf1,KfCntMax, mpi_byte, buf2,KfCntMax, mpi_byte,mpi_comm_col,ierr)
+#else
+! Exchange y-z buffers in columns of processors
+
+      call mpi_alltoallv(buf1,KfSndCnts, KfSndStrt,mpi_byte,buf2,KfRcvCnts, KfRcvStrt,mpi_byte,mpi_comm_col,ierr)
+#endif
+
+      t = MPI_Wtime() + t
+
+     if(jjsize .gt. 0) then
+
+      tc = - MPI_Wtime() + tc
+
+         call unpack_fcomm2_trans(dest,buf2,buf3,1,1,op)
+
+      t = MPI_Wtime() + t
+      endif
+
+      return
+      end subroutine
+

@@ -1,0 +1,11 @@
+What follows is in relation to the RPM Module.
+1. Mixing_2 is the oldest file, this had been used in conjuction with the then newly created 'printDataModule' in order to get 1 proc to do all the printing.
+2. Mixing_Saved is a relatively newer version and has a lot more comments.
+3. The structure of the code has been modified since '*_Saved'. The older structure and the newer structure are both present in 'Mixed05,09,19' with the former
+   being commented and located just below the latter.
+4. The present 'MixingModule.F90' doesn't have the older strucutre, this has been done in order to make it more presentable and less conjested.
+    In conjunction with the above point, I am getting an error at outws for error in small r expansion.
+5. As of 07/26 We decide the reformulate the whole problem wrt G=Z'. The Z was being used as an intermediate variable and didn't serve any purpose apart form that.
+   In addition, there was 2 CNTXT's definded. one for 1xNumPEs and the other for NumPEsx1. One was useful for QR and the other for generating P. We couldn't correlate
+   the both and decided to stick with 1xNumPEs and Perform LQ decomposition instead. We were in the middle of commenting the above two when we got side tracked. Thus
+   We decided to save the old one in MixingModule_07.26 This one is partially finished changing. The rest of the changes are done in the latest MixingModule.
