@@ -1,0 +1,243 @@
+calNicholsonPoles.F90:44:!  this is for Don Nicholson et al's approximate Fermi function......
+ContourModule.F90:96:   logical :: SearchingFermiEnergy = .true.
+ContourModule.F90:224:      SearchingFermiEnergy = .false.
+ContourModule.F90:1407:   ef = .not.SearchingFermiEnergy
+ConvergenceCheckModule.F90:20:   real (kind=RealKind) :: Old_FermiEnergy
+ConvergenceCheckModule.F90:48:   Old_FermiEnergy = ZERO
+ConvergenceCheckModule.F90:89:                                evec_rms, bcon_rms, efermi, etot )
+ConvergenceCheckModule.F90:130:   real (kind=RealKind), intent(in) :: efermi, etot
+ConvergenceCheckModule.F90:171:      ef_diff = efermi - Old_FermiEnergy;    ef_diff = abs(ef_diff)
+ConvergenceCheckModule.F90:175:   Old_FermiEnergy = efermi
+DefaultParameters.h:52:   n = n + 1; Keys(n) = 'Fermi Energy Tol (> 0)';                Values(n) = '0.0000001'
+DefaultParameters.h:128:   n = n + 1; Keys(n) = 'Iterate Fermi energy';                  Values(n) = '1'
+GFMethodModule.F90:217:   use ValenceDensityModule, only : getFermiEnergy
+GFMethodModule.F90:398:   chempot = getFermiEnergy()
+GFMethodModule.F90:726:   write(6,'(2x,a,t40,a,f18.11)')'Fermi Energy (Ryd)','=',chempot
+GFMethodModule.F90:799:   use ValenceDensityModule, only : getFermiEnergy
+GFMethodModule.F90:807:   real (kind=RealKind) :: t1, t2, NLloyd, efermi
+GFMethodModule.F90:841:      write(6,'(/,a,f10.2,/)')'Number of electrons used for finding Fermi energy = ',zvaltss
+GFMethodModule.F90:892:   chempot = getFermiEnergy()
+GFMethodModule.F90:893:   efermi = chempot
+GFMethodModule.F90:904:      etop = min(ZERO,efermi)
+GFMethodModule.F90:931:      etop=efermi
+GFMethodModule.F90:972:         call findLloydEf(efermi)
+GFMethodModule.F90:976:         NLloyd = getNLloyd(efermi)
+GFMethodModule.F90:982:!  calulate the integrated DOS and the Fermi energy
+GFMethodModule.F90:985:      call calRelIntegratedDOS(efermi)
+GFMethodModule.F90:987:     call calIntegratedDOS(efermi)
+GFMethodModule.F90:995:!  Update the fermi energy: chempot
+GFMethodModule.F90:997:   chempot = efermi
+GFMethodModule.F90:1002:   call calDensity(efermi)
+GFMethodModule.F90:1495:   subroutine calIntegratedDOS(efermi)
+GFMethodModule.F90:1528:   integer (kind=IntKind) :: id, BadFermiEnergy, is, info(4), ns, ia
+GFMethodModule.F90:1531:   real (kind=RealKind), intent(inout) :: efermi
+GFMethodModule.F90:1532:   real (kind=RealKind) :: efermi_old, dosmt, dosws, kBT, rfac
+GFMethodModule.F90:1568:!     set up the enegy contour that ends at (efermi,0) for Gaussian grids
+GFMethodModule.F90:1569:!     on a semi-circle contour or ends at (efermi,Eibottom) for uniform
+GFMethodModule.F90:1573:      call setupContour( ErBottom, efermi, EiBottom, EiTop )
+GFMethodModule.F90:1677:!     the real energy axis from E = 0 upto E = efermi
+GFMethodModule.F90:1684:!!    if (NumSS_IntEs > 1 .and. efermi > ZERO) then
+GFMethodModule.F90:1686:!        For finite temperature, extend the integration to efermi+6*log(10)*kB*T
+GFMethodModule.F90:1687:!        where 6*log(10)*kB*T is a result of the fact that at energy = efermi+13.82*kB*T
+GFMethodModule.F90:1691:                                      Eend=efermi+8.0d0*log(10.0d0)*kBT)
+GFMethodModule.F90:1702:!         ssIntegrValue(id)%dos = is the single site part of integrated DOS up to efermi
+GFMethodModule.F90:1800:!  Iterate the ending point of the energy contour to find the Fermi energy
+GFMethodModule.F90:1802:   BadFermiEnergy = 1
+GFMethodModule.F90:1803:   LOOP_LastE: do while (BadFermiEnergy > 0 .and. BadFermiEnergy <= MaxIterations)
+GFMethodModule.F90:1806:!     set to be (efermi,0.001) in KKR case.
+GFMethodModule.F90:1809:         eLast = cmplx(efermi,0.001d0,kind=CmplxKind)
+GFMethodModule.F90:1811:         eLast = cmplx(efermi,0.000d0,kind=CmplxKind)
+GFMethodModule.F90:1817:!     results (at efermi, not eLast) to it.
+GFMethodModule.F90:1866:!        Solve the single scattering problem for e = efermi.
+GFMethodModule.F90:1867:!        ssLastValue(id)%dos = is the single site part of the DOS at efermi on the
+GFMethodModule.F90:1871:            write(6,'(/,a,d15.8)')'S.S. Term DOS at the last energy: ',efermi
+GFMethodModule.F90:1880:               ssDOS = returnSingleSiteDOS(info,efermi,wk_dos)
+GFMethodModule.F90:1935:      efermi_old = efermi
+GFMethodModule.F90:1937:!     Compute the Fermi energy and efermi will be renewed.
+GFMethodModule.F90:1939:      call mufind(efermi,efermi_old,int_dos,last_dos,BadFermiEnergy,Lloyd_factor)
+GFMethodModule.F90:1943:         call addElectroStruct(efermi-efermi_old,LastValue(id),IntegrValue(id))
+GFMethodModule.F90:1960:         efermi = efermi_old
+GFMethodModule.F90:1967:         call GlobalMaxInGroup(aGID,BadFermiEnergy)
+GFMethodModule.F90:1973:!  call updateValenceDOS(efermi,Lloyd_factor)
+GFMethodModule.F90:2529:!  The following piece of code for multiplying the Fermi-Dirac function
+GFMethodModule.F90:2531:!  getFermiDiracFunc = 0, which causes sfac = 0 and has effects on
+GFMethodModule.F90:2532:!  finding the Fermi energy properly.
+GFMethodModule.F90:2536:      sfac = sfac*getFermiDiracFunc(adjustEnergy(is,e),chempot,       &
+GFMethodModule.F90:2864:!     finds the Lloyd factors for the specified Fermi level
+GFMethodModule.F90:2910:   subroutine findLloydEf(efermi)
+GFMethodModule.F90:2918:   real (kind=RealKind), intent(inout) :: efermi
+GFMethodModule.F90:2925:   ed = efermi+ONE
+GFMethodModule.F90:2928:   qa = getNLloyd(efermi)
+GFMethodModule.F90:2934:   ea = efermi
+GFMethodModule.F90:2937:      eb = efermi + max(.1d0*abs(qdif_a),0.10d0)
+GFMethodModule.F90:2939:      eb = efermi - max(.1d0*abs(qdif_a),0.10d0)
+GFMethodModule.F90:2945:      efermi=eb
+GFMethodModule.F90:3030:   efermi = eb
+GFMethodModule.F90:3035:      write(6,'(a,2d24.16,i4)')"Lloyd: New Fermi Level::",efermi,qb/GlobalNumAtoms,n
+GFMethodModule.F90:4857:   subroutine mufind(efermi,efermi_old,int_dos,last_dos,BadFermiEnergy,Lloyd_factor)
+GFMethodModule.F90:4871:   integer (kind=IntKind), intent(inout) :: BadFermiEnergy
+GFMethodModule.F90:4875:   real (kind=RealKind), intent(out) :: efermi
+GFMethodModule.F90:4876:   real (kind=RealKind), intent(in) :: efermi_old
+GFMethodModule.F90:4899:!  Note: IntegrValue(id)%dos = is the MST part of integrated DOS up to (efermi_old,0) on a 
+GFMethodModule.F90:4901:!      ssIntegrValue(id)%dos = is the single site part of integrated DOS up to efermi
+GFMethodModule.F90:4903:!          LastValue(id)%dos = is the MST part of the DOS at (efermi_old,eib) for atom id
+GFMethodModule.F90:4904:!        ssLastValue(id)%dos = is the single site part of the DOS at efermi on the
+GFMethodModule.F90:4937:                               ! integrated DOS of the system up to (efermi_old,0)
+GFMethodModule.F90:4939:   tnen = wspace(2)            ! tnen = the DOS of the system at (efermi_old,0)
+GFMethodModule.F90:4942:!  find the fermi energy
+GFMethodModule.F90:4947:!        efermi = efermi_old
+GFMethodModule.F90:4949:!        efermi = efermi_old - 0.05d0
+GFMethodModule.F90:4951:!        efermi = efermi_old + 0.05d0
+GFMethodModule.F90:4953:!        efermi = efermi_old - xtws/tnen
+GFMethodModule.F90:4957:!        efermi = efermi_old - xtws/tnen
+GFMethodModule.F90:4960:!        efermi = efermi_old
+GFMethodModule.F90:4963:!     efermi = efermi_old
+GFMethodModule.F90:4967:!  with the following lines, so that in the case when Fermi energy
+GFMethodModule.F90:4968:!  falls into a band gap, where the DOS is very small, the new Fermi
+GFMethodModule.F90:4972:      efermi = efermi_old
+GFMethodModule.F90:4975:         efermi = efermi_old - min(0.01d0,xtws)
+GFMethodModule.F90:4977:         efermi = efermi_old + min(0.01d0,-xtws)
+GFMethodModule.F90:4980:      efermi = efermi_old - xtws/tnen
+GFMethodModule.F90:4984:   efdif = efermi-efermi_old
+GFMethodModule.F90:5030:      write(6,'(/,''At Old Fermi Energy'')')
+GFMethodModule.F90:5035:      write(6,'(4x,''Fermi Energy DOS per Site'',t40,''='',1f18.12)')dosefpa
+GFMethodModule.F90:5066:!        efermi = efermi_old + efdif
+GFMethodModule.F90:5068:            BadFermiEnergy=0
+GFMethodModule.F90:5070:            BadFermiEnergy = BadFermiEnergy + 1
+GFMethodModule.F90:5073:         BadFermiEnergy = 0
+GFMethodModule.F90:5078:      write(6,'(/,''New Fermi energy'',t40,''='',f18.12)') efermi
+GFMethodModule.F90:5079:      write(6,'(''Change in Fermi energy'',t40,''='',f18.12)') efermi-efermi_old
+GFMethodModule.F90:5156:   subroutine updateValenceDOS(efermi,Lloyd_factor)
+GFMethodModule.F90:5175:   real (kind=RealKind), intent(in):: efermi
+GFMethodModule.F90:5188:      write(6,'(/,''New Fermi energy'',t40,''='',f18.12)') efermi
+GFMethodModule.F90:5189:      write(6,'(''Change in Fermi energy'',t40,''='',f18.12)') efermi-chempot
+GFMethodModule.F90:5195:      write(6,'(4x,a,t40,a,f18.12)')'Fermi energy','=',fef
+GFMethodModule.F90:5196:      write(6,'(4x,a,t40,a,f18.12,/)')'DOS per atom at the Fermi energy','=', &
+GFMethodModule.F90:5201:!  update integrated densities of states and Green function up to fermi
+GFMethodModule.F90:5312:   subroutine calDensity(efermi) ! This code needs to be modified for random alloys case
+GFMethodModule.F90:5317:                                    updateValenceDensity, updateFermiEnergy
+GFMethodModule.F90:5328:   real (kind=RealKind), intent(in):: efermi
+GFMethodModule.F90:5361:!  Finally, update the Fermi energy and other global quantities...
+GFMethodModule.F90:5363:   call updateFermiEnergy(efermi,zvaltss)
+GFMethodModule.F90:5814:            write(dos_title(1),'(a,f12.8)')'Fermi energy:',chempot
+GFMethodModule.F90:5847:               write(dos_title(1),'(a,f12.8)')'Fermi energy:',chempot
+GFMethodModule.F90:5914:         write(dos_title(1),'(a,f12.8)')'Fermi energy:',chempot
+GFMethodModule.F90:5945:      write(dos_title(1),'(a,f12.8)')'Fermi energy:',chempot
+GFMethodModule.F90:6042:            write(dos_title(1),'(a,f12.8)')'Fermi energy:',chempot
+GFMethodModule.F90:6075:               write(dos_title(1),'(a,f12.8)')'Fermi energy:',chempot
+GFMethodModule.F90:6141:         write(dos_title(1),'(a,f12.8)')'Fermi energy:',chempot
+GFMethodModule.F90:6172:      write(dos_title(1),'(a,f12.8)')'Fermi energy:',chempot
+GFMethodModule.F90:6299:   sfac = sfac*getFermiDiracFunc(e,chempot,Boltzmann*Temperature)
+GFMethodModule.F90:6868:   subroutine calRelIntegratedDOS(efermi)
+GFMethodModule.F90:6902:   integer (kind=IntKind) :: id, BadFermiEnergy, is, info(4), ns, ia
+GFMethodModule.F90:6905:   real (kind=RealKind), intent(inout) :: efermi
+GFMethodModule.F90:6906:   real (kind=RealKind) :: efermi_old, kBT, rfac
+GFMethodModule.F90:6932:!     set up the enegy contour that ends at (efermi,0) for Gaussian grids
+GFMethodModule.F90:6933:!     on a semi-circle contour or ends at (efermi,Eibottom) for uniform
+GFMethodModule.F90:6937:      call setupContour( ErBottom, efermi, EiBottom, EiTop )
+GFMethodModule.F90:6983:!     the real energy axis from E = 0 upto E = efermi
+GFMethodModule.F90:6991:                                   Eend=efermi+8.0d0*log(10.0d0)*kBT, &
+GFMethodModule.F90:7046:!  Iterate the ending point of the energy contour to find the Fermi energy
+GFMethodModule.F90:7048:   BadFermiEnergy = 1
+GFMethodModule.F90:7049:   LOOP_LastE: do while (BadFermiEnergy > 0 .and. BadFermiEnergy <= MaxIterations)
+GFMethodModule.F90:7052:   !     set to be (efermi,0.001) in KKR case.
+GFMethodModule.F90:7055:         eLast = cmplx(efermi,0.005d0,kind=CmplxKind)
+GFMethodModule.F90:7057:         eLast = cmplx(efermi,0.000d0,kind=CmplxKind)
+GFMethodModule.F90:7063:   !     results (at efermi, not eLast) to it.
+GFMethodModule.F90:7113:!        Solve the single scattering problem for e = efermi.
+GFMethodModule.F90:7114:!        ssLastValue(id)%dos = is the single site part of the DOS at efermi on the
+GFMethodModule.F90:7124:               ssDOS = returnRelSingleSiteDOS(info,efermi,wk_dos)
+GFMethodModule.F90:7128:                  write(6,'(/,a,d15.8)')'S.S. Term DOS at the last energy: ',efermi
+GFMethodModule.F90:7174:      efermi_old = efermi
+GFMethodModule.F90:7176:!     Compute the Fermi energy and efermi will be renewed.
+GFMethodModule.F90:7178:      call mufind(efermi,efermi_old,int_dos,last_dos,BadFermiEnergy,Lloyd_factor)
+GFMethodModule.F90:7182:         call addElectroStruct(efermi-efermi_old,LastValue(id),IntegrValue(id))
+GFMethodModule.F90:7202:         call GlobalMaxInGroup(aGID,BadFermiEnergy)
+GFMethodModule.F90:7208:!  call updateValenceDOS(efermi,Lloyd_factor)
+GFMethodModule.F90:8044:   function getFermiDiracFunc(z,mu,kBT) result(fd)
+GFMethodModule.F90:8065:   end function getFermiDiracFunc
+keep.F90:2:   subroutine keep(sdstep,kscf,max_rms, Efermi, TotalEnergy, PV3)
+keep.F90:36:   real (kind=RealKind), intent(in) :: Efermi
+keep.F90:125:   write(string_tmp,'(f8.5,''    '')')Efermi
+keep.F90:126:   call insertColumn('Efermi',string_tmp)
+KreinModule.F90:279:         write (6,'(a)') "to determine the correct charge at the Fermi level."
+Makefile:119:polyfermi.o \
+MatsubaraModule.F90:169:      call calPolyFermi(NumPoles,epole,weight,mu=etop)
+MatsubaraModule.F90:215:!  this is for Don Nicholson et al's approximate Fermi function......
+MatsubaraModule.F90:331:   subroutine calPolyFermi(ne,xg,wg,nterms,mu)
+MatsubaraModule.F90:341:!  subroutine polyfermi(Temp,xg,wg,ne,nterms,mu)   
+MatsubaraModule.F90:372:      call ErrorHandler('calPolyFermi','ne > nem',ne,nem)
+MatsubaraModule.F90:383:      call ErrorHandler('calPolyFermi','n > ntm or n <= ne',n,ntm,ne)
+MatsubaraModule.F90:508:   end subroutine calPolyFermi
+mst2.F90:176:   use ValenceDensityModule, only : initValenceDensity, getFermiEnergy, endValenceDensity
+mst2.F90:329:   real (kind=RealKind) :: Efermi, volume, cfac
+mst2.F90:1164:      Efermi=getTestPotEf()
+mst2.F90:1175:      Efermi=getPotEf()
+mst2.F90:1255:      Efermi = ErTop
+mst2.F90:1257:         write(6,'(/,a,f12.8)')' Initial Fermi energy is set by the input:',Efermi
+mst2.F90:1261:         write(6,'(/,a,f12.8)')' Initial Fermi energy read from the potential:',Efermi
+mst2.F90:1297:                           lmax_rho,n_spin_pola,n_spin_cant,Efermi,   &
+mst2.F90:1531:!        states, electron density, and Fermi energy
+mst2.F90:1649:                                evec_rms, bcon_rms, getFermiEnergy(), &
+mst2.F90:1947:         Efermi = getFermiEnergy()
+mst2.F90:1948:         call setPotEf(Efermi)
+mst2.F90:1961:            call keep(sdstep_new,niter,keep_rms,getFermiEnergy(),     &
+mst2.F90:1999:               call calPartialDOS(getFermiEnergy())
+mst2.F90:2078:!v2.0                               n_spin_cant, getFermiEnergy(),        &
+polyfermi.F90:10:      subroutine polyfermi(Temp,xg,wg,ne,npoles,mu)   
+polyfermi.F90:42:         call ErrorHandler('polyfermi','ne > nem',ne,nem)
+polyfermi.F90:53:         call ErrorHandler('polyfermi','n > ntm or n <= ne',n,ntm,ne)
+polyfermi.F90:176:      end subroutine polyfermi
+PotentialModule.F90:113:   real (kind=RealKind) :: efermi
+PotentialModule.F90:114:   real (kind=RealKind), allocatable :: efermi_in(:,:)
+PotentialModule.F90:371:   allocate( Potential(LocalNumAtoms), efermi_in(MaxNumSpecies, LocalNumAtoms) )
+PotentialModule.F90:505:   efermi=100.0d0
+PotentialModule.F90:536:   deallocate( efermi_in )
+PotentialModule.F90:1566:   ef = efermi
+PotentialModule.F90:1579:   efermi = ef
+PotentialModule.F90:1706:   call GlobalMinInGroup(GroupID,efermi)
+PotentialModule.F90:1710:!  The starting potential may come with different fermi energy.
+PotentialModule.F90:1736:         pot_shift = efermi_in(ia,id) - efermi
+PotentialModule.F90:1865:   efermi = 100.0d0
+PotentialModule.F90:1882:!        read(funit,'(f5.0,17x,f12.5,f5.0,e20.13)')ztss,alat,zcss,efermi_in(ia,id)
+PotentialModule.F90:1883:         read(funit,*)ztss,alat,zcss,efermi_in(ia,id)
+PotentialModule.F90:2156:      efermi=min(efermi,efermi_in(ia,id))
+PotentialModule.F90:2256:                 nspin, n_spin_pola, efermi_in(1,id), evec,           &
+PotentialModule.F90:2299:   efermi = 100.0d0
+PotentialModule.F90:2316:      efermi = min(efermi, efermi_in(ia,id))
+PotentialModule.F90:2577:                    ztotss,rmt,zcorss,efermi
+PotentialModule.F90:2765:                nspin, n_spin_pola, efermi, evec,                     &
+putpotg.F90:4:                      nspin,n_spin_pola,efermi,evec,                  &
+putpotg.F90:81:   real (kind=RealKind), intent(in) :: efermi
+putpotg.F90:137:                             efermi,vdif,nr,vr(1,1,ia),rhotot(1,1,ia),&
+putpotg.F90:307:                             efermi,vdif,nr,vr(1,1,ia),rhotot(1,1,ia),&
+putpotg.F90:363:                             efermi,vdif,nr,vr,rhotot,                 &
+putpotg.F90:404:   real (kind=RealKind), intent(in) :: efermi
+putpotg.F90:501:      fmsgbuf(i+2)=efermi
+rdin_old_lsms.F90:199:!     igrid   : specifies energy contour  3=Don's Fermi function poles
+rdin_old_lsms.F90:287:!     eftol        : over-ride scf convergence tolerence : Fermi engy.
+readInputInOtherFormat.F90:185:   DataTable%KeyName(n) = 'Fermi Energy Tol (> 0)'
+ScfDataModule.F90:212:   rstatus = getKeyValue(tbl_id,'Fermi Energy Tol (> 0)',eftol)
+ScfDataModule.F90:307:   rstatus = getKeyValue(tbl_id,'Iterate Fermi energy',iterateEf)
+ValenceDensityModule.F90:43:          getFermiEnergy,            &
+ValenceDensityModule.F90:44:          setFermiEnergy,            &
+ValenceDensityModule.F90:54:          updateFermiEnergy,         &
+ValenceDensityModule.F90:142:   real (kind=RealKind) :: FermiEnergy
+ValenceDensityModule.F90:159:   subroutine initValenceDensity(na,vnum,lmax_rho_in,pola,cant,efermi, &
+ValenceDensityModule.F90:197:   real (kind=RealKind), intent(in) :: efermi
+ValenceDensityModule.F90:418:   FermiEnergy = efermi
+ValenceDensityModule.F90:518:      write(6,'(2x,a,t40,a,f18.11)')'Fermi Energy (Ryd)','=',FermiEnergy
+ValenceDensityModule.F90:861:   function getFermiEnergy() result(ef)
+ValenceDensityModule.F90:866:   ef=FermiEnergy
+ValenceDensityModule.F90:867:   end function getFermiEnergy
+ValenceDensityModule.F90:873:   subroutine setFermiEnergy(ef)
+ValenceDensityModule.F90:878:   FermiEnergy = ef
+ValenceDensityModule.F90:880:   end subroutine setFermiEnergy
+ValenceDensityModule.F90:2287:   subroutine updateFermiEnergy(ef,zvaltss)
+ValenceDensityModule.F90:2322:   character (len=17) :: sname='updateFermiEnergy'
+ValenceDensityModule.F90:2324:   FermiEnergy = ef
+ValenceDensityModule.F90:2378:         write(6,'(/,''updateFermiEnergy:: Trouble: VP[q,z]:'',2d16.8)')qvaltws,zvaltss
+ValenceDensityModule.F90:2386:      call WarningHandler('updateFermiEnergy','negative qint',qint)
+ValenceDensityModule.F90:2450:!  Add [N*FermiEnergy] to band energy: fixed chem. potl calc...........
+ValenceDensityModule.F90:2453:      BandEnergy=BandEnergy + HALF*(qvaltws-zvaltss)*FermiEnergy
+ValenceDensityModule.F90:2460:   end subroutine updateFermiEnergy

@@ -1,0 +1,1181 @@
+================================================================================================================================
+                   First Attempt | Er Bottom = -0.4 
+================================================================================================================================
+             ********************************************************
+             *                                                      *
+             *              Fortran 90 Interface Module             *
+             *                                                      *
+             *                         For                          *
+             *                                                      *
+             *              MPI Message Passing Library             *
+             *                                                      *
+             *                   Version No. 2.0k                   *
+             *                                                      *
+             ********************************************************
+  
+ CHARACTER_BYTES =            1
+ INTEGER_BYTES   =            4
+ REAL_BYTES      =            8
+ COMPLEX_BYTES   =           16
+ ADDRESS_BYTES   =            8
+  
+ Number of Procs =            6
+  
+Execution starts at 13:37:00, 12-25-2019 on     6 nodes
+#-------------------------------------------------------------------------------
+#
+#
+#           ********************************************************
+#           *                                                      *
+#           *    Full-Potential Multiple Scattering Theory Based   *
+#           *                                                      *
+#           *  Ab Initio Electronic Structure Calculation Package  *
+#           *                                                      *
+#           ********************************************************
+#
+#
+#   username                 : shohams
+#   system name              : rigoletto.psc.edu
+#   code compiled            : Friday, December 13 2019 14:54:03
+#   Source code version      : v2.5.2.9
+#-------------------------------------------------------------------------------
+
+ The Position Data File: ./position.dat
+
+ The Position Data is read successfully!
+
+
+================================================================================
+
+ The lattice system is: Hexagonal   
+
+================================================================================
+
+            *********************************************
+            *     Output from createParallelization     *
+            *            in ProcMappingModule           *
+            *********************************************
+
+The number of processors in each box :    3
+The number of repeats along k-dimen. :    1
+The number of repeats along e-dimen. :    2
+Dimension of the box :    1 x    1 x    3
+MyPE =     0, NumEs, NumEsPerBox =    60   30
+Energy point index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20, ...
+Process in E-group =     0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1, ...
+MyPE =     0, NumKs, NumKsPerBox =     1    1
+MyPE =     0, K index =     1
+IBZ K point index  =     1
+Process in K-group =     1
+MyPE =     2, NumEs, NumEsPerBox =    60   30
+MyPE =     2, NumKs, NumKsPerBox =     1    1
+MyPE =     2, K index =     1
+MyPE =     1, NumEs, NumEsPerBox =    60   30
+MyPE =     1, NumKs, NumKsPerBox =     1    1
+MyPE =     1, K index =     1
+MyPE =     3, NumEs, NumEsPerBox =    60   30
+MyPE =     5, NumEs, NumEsPerBox =    60   30
+MyPE =     5, NumKs, NumKsPerBox =     1    1
+MyPE =     5, K index =     1
+MyPE =     3, NumKs, NumKsPerBox =     1    1
+MyPE =     3, K index =     1
+MyPE =     4, NumEs, NumEsPerBox =    60   30
+MyPE =     4, NumKs, NumKsPerBox =     1    1
+MyPE =     4, K index =     1
+
+================================================================================
+
+The number of processes that write output data:      1
+ERROR: ErTop < ErBottom
+VALUE:     -0.4841068D+00      -0.4000000D+00
+STOP AT initContour1
+ERROR: ErTop < ErBottom
+ERROR: ErTop < ErBottom
+VALUE:     -0.4841068D+00      -0.4000000D+00
+STOP AT initContour1
+ERROR: ErTop < ErBottom
+VALUE:     -0.4841068D+00      -0.4000000D+00
+STOP AT initContour1
+ERROR: ErTop < ErBottom
+VALUE:     -0.4841068D+00      -0.4000000D+00
+STOP AT initContour1
+VALUE:     -0.4841068D+00      -0.4000000D+00
+STOP AT initContour1
+================================================================================================================================
+                   Second Attempt | Er Bottom=-0.6 
+================================================================================================================================
+  
+             ********************************************************
+             *                                                      *
+             *              Fortran 90 Interface Module             *
+             *                                                      *
+             *                         For                          *
+             *                                                      *
+             *              MPI Message Passing Library             *
+             *                                                      *
+             *                   Version No. 2.0k                   *
+             *                                                      *
+             ********************************************************
+  
+ CHARACTER_BYTES =            1
+ INTEGER_BYTES   =            4
+ REAL_BYTES      =            8
+ COMPLEX_BYTES   =           16
+ ADDRESS_BYTES   =            8
+  
+ Number of Procs =            6
+  
+Execution starts at 13:55:30, 12-29-2019 on     6 nodes
+#-------------------------------------------------------------------------------
+#
+#
+#           ********************************************************
+#           *                                                      *
+#           *    Full-Potential Multiple Scattering Theory Based   *
+#           *                                                      *
+#           *  Ab Initio Electronic Structure Calculation Package  *
+#           *                                                      *
+#           ********************************************************
+#
+#
+#   username                 : shohams
+#   system name              : rigoletto.psc.edu
+#   code compiled            : Friday, December 13 2019 14:54:03
+#   Source code version      : v2.5.2.9
+#-------------------------------------------------------------------------------
+
+ The Position Data File: ./position.dat
+
+ The Position Data is read successfully!
+
+
+================================================================================
+
+ The lattice system is: Hexagonal   
+
+================================================================================
+
+            *********************************************
+            *     Output from createParallelization     *
+            *            in ProcMappingModule           *
+            *********************************************
+
+The number of processors in each box :    3
+The number of repeats along k-dimen. :    1
+The number of repeats along e-dimen. :    2
+Dimension of the box :    1 x    1 x    3
+MyPE =     0, NumEs, NumEsPerBox =    60   30
+Energy point index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20, ...
+Process in E-group =     0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1, ...
+MyPE =     0, NumKs, NumKsPerBox =     1    1
+MyPE =     0, K index =     1
+IBZ K point index  =     1
+Process in K-group =     1
+MyPE =     1, NumEs, NumEsPerBox =    60   30
+MyPE =     2, NumEs, NumEsPerBox =    60   30
+MyPE =     2, NumKs, NumKsPerBox =     1    1
+MyPE =     2, K index =     1
+MyPE =     4, NumEs, NumEsPerBox =    60   30
+MyPE =     4, NumKs, NumKsPerBox =     1    1
+MyPE =     4, K index =     1
+MyPE =     5, NumEs, NumEsPerBox =    60   30
+MyPE =     5, NumKs, NumKsPerBox =     1    1
+MyPE =     5, K index =     1
+MyPE =     1, NumKs, NumKsPerBox =     1    1
+MyPE =     1, K index =     1
+
+================================================================================
+
+The number of processes that write output data:      1
+MyPE =     3, NumEs, NumEsPerBox =    60   30
+MyPE =     3, NumKs, NumKsPerBox =     1    1
+MyPE =     3, K index =     1
+ERROR: ErTop < ErBottom
+VALUE:     -0.6841068D+00      -0.6000000D+00
+STOP AT initContour1
+ERROR: ErTop < ErBottom
+VALUE:     -0.6841068D+00      -0.6000000D+00
+STOP AT initContour1
+ERROR: ErTop < ErBottom
+ERROR: ErTop < ErBottom
+VALUE:     -0.6841068D+00      -0.6000000D+00
+STOP AT initContour1
+ERROR: ErTop < ErBottom
+VALUE:     -0.6841068D+00      -0.6000000D+00
+STOP AT initContour1
+VALUE:     -0.6841068D+00      -0.6000000D+00
+STOP AT initContour1
+================================================================================================================================
+                   Third Attempt | changed i/p potential to XDR
+================================================================================================================================
+  
+             ********************************************************
+             *                                                      *
+             *              Fortran 90 Interface Module             *
+             *                                                      *
+             *                         For                          *
+             *                                                      *
+             *              MPI Message Passing Library             *
+             *                                                      *
+             *                   Version No. 2.0k                   *
+             *                                                      *
+             ********************************************************
+  
+ CHARACTER_BYTES =            1
+ INTEGER_BYTES   =            4
+ REAL_BYTES      =            8
+ COMPLEX_BYTES   =           16
+ ADDRESS_BYTES   =            8
+  
+ Number of Procs =            6
+  
+Execution starts at 14:44:27, 12-29-2019 on     6 nodes
+#-------------------------------------------------------------------------------
+#
+#
+#           ********************************************************
+#           *                                                      *
+#           *    Full-Potential Multiple Scattering Theory Based   *
+#           *                                                      *
+#           *  Ab Initio Electronic Structure Calculation Package  *
+#           *                                                      *
+#           ********************************************************
+#
+#
+#   username                 : shohams
+#   system name              : rigoletto.psc.edu
+#   code compiled            : Friday, December 13 2019 14:54:03
+#   Source code version      : v2.5.2.9
+#-------------------------------------------------------------------------------
+
+ The Position Data File: ./position.dat
+
+ The Position Data is read successfully!
+
+
+================================================================================
+
+ The lattice system is: Hexagonal   
+
+================================================================================
+
+            *********************************************
+            *     Output from createParallelization     *
+            *            in ProcMappingModule           *
+            *********************************************
+
+The number of processors in each box :    3
+The number of repeats along k-dimen. :    1
+The number of repeats along e-dimen. :    2
+Dimension of the box :    1 x    1 x    3
+MyPE =     0, NumEs, NumEsPerBox =    60   30
+Energy point index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20, ...
+Process in E-group =     0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1, ...
+MyPE =     0, NumKs, NumKsPerBox =     1    1
+MyPE =     0, K index =     1
+IBZ K point index  =     1
+Process in K-group =     1
+MyPE =     1, NumEs, NumEsPerBox =    60   30
+MyPE =     1, NumKs, NumKsPerBox =     1    1
+MyPE =     1, K index =     1
+MyPE =     2, NumEs, NumEsPerBox =    60   30
+MyPE =     2, NumKs, NumKsPerBox =     1    1
+MyPE =     2, K index =     1
+MyPE =     5, NumEs, NumEsPerBox =    60   30
+MyPE =     5, NumKs, NumKsPerBox =     1    1
+MyPE =     5, K index =     1
+MyPE =     3, NumEs, NumEsPerBox =    60   30
+MyPE =     4, NumEs, NumEsPerBox =    60   30
+MyPE =     4, NumKs, NumKsPerBox =     1    1
+MyPE =     3, NumKs, NumKsPerBox =     1    1
+MyPE =     3, K index =     1
+MyPE =     4, K index =     1
+
+================================================================================
+
+The number of processes that write output data:      1
+ERROR: ErTop < ErBottom
+VALUE:     -0.6841068D+00      -0.6000000D+00
+STOP AT initContour1
+ERROR: ErTop < ErBottom
+VALUE:     -0.6841068D+00      -0.6000000D+00
+STOP AT initContour1
+ERROR: ErTop < ErBottom
+VALUE:     -0.6841068D+00      -0.6000000D+00
+STOP AT initContour1
+ERROR: ErTop < ErBottom
+VALUE:     -0.6841068D+00      -0.6000000D+00
+STOP AT initContour1
+ERROR: ErTop < ErBottom
+VALUE:     -0.6841068D+00      -0.6000000D+00
+STOP AT initContour1
+================================================================================================================================
+                   Fourth Attempt - bottom=-5.3 
+================================================================================================================================
+  
+             ********************************************************
+             *                                                      *
+             *              Fortran 90 Interface Module             *
+             *                                                      *
+             *                         For                          *
+             *                                                      *
+             *              MPI Message Passing Library             *
+             *                                                      *
+             *                   Version No. 2.0k                   *
+             *                                                      *
+             ********************************************************
+  
+ CHARACTER_BYTES =            1
+ INTEGER_BYTES   =            4
+ REAL_BYTES      =            8
+ COMPLEX_BYTES   =           16
+ ADDRESS_BYTES   =            8
+  
+ Number of Procs =            6
+  
+Execution starts at 09:43:50, 12-30-2019 on     6 nodes
+#-------------------------------------------------------------------------------
+#
+#
+#           ********************************************************
+#           *                                                      *
+#           *    Full-Potential Multiple Scattering Theory Based   *
+#           *                                                      *
+#           *  Ab Initio Electronic Structure Calculation Package  *
+#           *                                                      *
+#           ********************************************************
+#
+#
+#   username                 : shohams
+#   system name              : rigoletto.psc.edu
+#   code compiled            : Friday, December 13 2019 14:54:03
+#   Source code version      : v2.5.2.9
+#-------------------------------------------------------------------------------
+
+ The Position Data File: ./position.dat
+
+ The Position Data is read successfully!
+
+
+================================================================================
+
+ The lattice system is: Hexagonal   
+
+================================================================================
+
+            *********************************************
+            *     Output from createParallelization     *
+            *            in ProcMappingModule           *
+            *********************************************
+
+The number of processors in each box :    3
+The number of repeats along k-dimen. :    1
+The number of repeats along e-dimen. :    2
+Dimension of the box :    1 x    1 x    3
+MyPE =     0, NumEs, NumEsPerBox =    60   30
+Energy point index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20, ...
+Process in E-group =     0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1, ...
+MyPE =     0, NumKs, NumKsPerBox =     1    1
+MyPE =     0, K index =     1
+IBZ K point index  =     1
+Process in K-group =     1
+MyPE =     1, NumEs, NumEsPerBox =    60   30
+MyPE =     2, NumEs, NumEsPerBox =    60   30
+MyPE =     2, NumKs, NumKsPerBox =     1    1
+MyPE =     2, K index =     1
+MyPE =     1, NumKs, NumKsPerBox =     1    1
+MyPE =     3, NumEs, NumEsPerBox =    60   30
+MyPE =     3, NumKs, NumKsPerBox =     1    1
+MyPE =     3, K index =     1
+MyPE =     4, NumEs, NumEsPerBox =    60   30
+MyPE =     4, NumKs, NumKsPerBox =     1    1
+MyPE =     4, K index =     1
+MyPE =     5, NumEs, NumEsPerBox =    60   30
+MyPE =     5, NumKs, NumKsPerBox =     1    1
+MyPE =     5, K index =     1
+MyPE =     1, K index =     1
+
+================================================================================
+
+The number of processes that write output data:      1
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4241958155404D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4241958155404D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4241954304263D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4241954304263D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ ! VALUE: -0.4241954304263D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.1094147401837D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.1094147401837D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.1096552655655D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.1096552655655D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ ! VALUE: -0.1096552655655D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4280296450609D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4280296450609D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4280314508609D-05                                                !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4280314508609D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4280314508609D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.2873188443164D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.2873188443164D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.2871915853131D-05                                                !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.2871915853131D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.2871915853131D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.7761336125123D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.7761336125123D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ERROR: rho0(ir) < 0
+VALUE:     -0.1183652D-04
+STOP AT constructChargeDensity
+================================================================================================================================
+                   Fifth Attempt | no. of k points 8x8x8
+================================================================================================================================
+  
+             ********************************************************
+             *                                                      *
+             *              Fortran 90 Interface Module             *
+             *                                                      *
+             *                         For                          *
+             *                                                      *
+             *              MPI Message Passing Library             *
+             *                                                      *
+             *                   Version No. 2.0k                   *
+             *                                                      *
+             ********************************************************
+  
+ CHARACTER_BYTES =            1
+ INTEGER_BYTES   =            4
+ REAL_BYTES      =            8
+ COMPLEX_BYTES   =           16
+ ADDRESS_BYTES   =            8
+  
+ Number of Procs =            6
+  
+Execution starts at 10:55:44, 12-30-2019 on     6 nodes
+#-------------------------------------------------------------------------------
+#
+#
+#           ********************************************************
+#           *                                                      *
+#           *    Full-Potential Multiple Scattering Theory Based   *
+#           *                                                      *
+#           *  Ab Initio Electronic Structure Calculation Package  *
+#           *                                                      *
+#           ********************************************************
+#
+#
+#   username                 : shohams
+#   system name              : rigoletto.psc.edu
+#   code compiled            : Friday, December 13 2019 14:54:03
+#   Source code version      : v2.5.2.9
+#-------------------------------------------------------------------------------
+
+ The Position Data File: ./position.dat
+
+ The Position Data is read successfully!
+
+
+================================================================================
+
+ The lattice system is: Hexagonal   
+
+================================================================================
+
+            *********************************************
+            *     Output from createParallelization     *
+            *            in ProcMappingModule           *
+            *********************************************
+
+The number of processors in each box :    3
+The number of repeats along k-dimen. :    1
+The number of repeats along e-dimen. :    2
+Dimension of the box :    1 x    1 x    3
+MyPE =     0, NumEs, NumEsPerBox =    60   30
+Energy point index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20, ...
+Process in E-group =     0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1, ...
+MyPE =     0, NumKs, NumKsPerBox =     1    1
+MyPE =     0, K index =     1
+IBZ K point index  =     1
+Process in K-group =     1
+MyPE =     1, NumEs, NumEsPerBox =    60   30
+MyPE =     1, NumKs, NumKsPerBox =     1    1
+MyPE =     2, NumEs, NumEsPerBox =    60   30
+MyPE =     2, NumKs, NumKsPerBox =     1    1
+MyPE =     1, K index =     1
+MyPE =     2, K index =     1
+MyPE =     3, NumEs, NumEsPerBox =    60   30
+MyPE =     3, NumKs, NumKsPerBox =     1    1
+MyPE =     3, K index =     1
+MyPE =     4, NumEs, NumEsPerBox =    60   30
+MyPE =     4, NumKs, NumKsPerBox =     1    1
+MyPE =     4, K index =     1
+MyPE =     5, NumEs, NumEsPerBox =    60   30
+MyPE =     5, NumKs, NumKsPerBox =     1    1
+MyPE =     5, K index =     1
+
+================================================================================
+
+The number of processes that write output data:      1
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4470445786886D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4470445786886D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4470452169780D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4470452169780D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ ! VALUE: -0.4470452169780D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.1106198259215D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.1106198259215D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.1105240750965D-04                                                !
+ ! AT: updateFermiEnergy
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.1105240750965D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.1105240750965D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4340979452344D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4340979452344D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4340922382440D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4340922382440D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4340922382440D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.3184889773244D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.3184889773244D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.3184313693616D-05                                                !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.3184313693616D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.3184313693616D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.7550088975705D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.7550088975705D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ERROR: rho0(ir) < 0
+VALUE:     -0.1144452D-04
+STOP AT constructChargeDensity
+================================================================================================================================
+                   Sixth Attempt | no. of k points 4x4x4
+================================================================================================================================
+  
+             ********************************************************
+             *                                                      *
+             *              Fortran 90 Interface Module             *
+             *                                                      *
+             *                         For                          *
+             *                                                      *
+             *              MPI Message Passing Library             *
+             *                                                      *
+             *                   Version No. 2.0k                   *
+             *                                                      *
+             ********************************************************
+  
+ CHARACTER_BYTES =            1
+ INTEGER_BYTES   =            4
+ REAL_BYTES      =            8
+ COMPLEX_BYTES   =           16
+ ADDRESS_BYTES   =            8
+  
+ Number of Procs =            6
+  
+Execution starts at 13:57:31, 12-30-2019 on     6 nodes
+#-------------------------------------------------------------------------------
+#
+#
+#           ********************************************************
+#           *                                                      *
+#           *    Full-Potential Multiple Scattering Theory Based   *
+#           *                                                      *
+#           *  Ab Initio Electronic Structure Calculation Package  *
+#           *                                                      *
+#           ********************************************************
+#
+#
+#   username                 : shohams
+#   system name              : rigoletto.psc.edu
+#   code compiled            : Friday, December 13 2019 14:54:03
+#   Source code version      : v2.5.2.9
+#-------------------------------------------------------------------------------
+
+ The Position Data File: ./position.dat
+
+ The Position Data is read successfully!
+
+
+================================================================================
+
+ The lattice system is: Hexagonal   
+
+================================================================================
+
+            *********************************************
+            *     Output from createParallelization     *
+            *            in ProcMappingModule           *
+            *********************************************
+
+The number of processors in each box :    3
+The number of repeats along k-dimen. :    1
+The number of repeats along e-dimen. :    2
+Dimension of the box :    1 x    1 x    3
+MyPE =     0, NumEs, NumEsPerBox =    60   30
+Energy point index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20, ...
+Process in E-group =     0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1    0    1, ...
+MyPE =     0, NumKs, NumKsPerBox =     1    1
+MyPE =     0, K index =     1
+IBZ K point index  =     1
+Process in K-group =     1
+MyPE =     1, NumEs, NumEsPerBox =    60   30
+MyPE =     1, NumKs, NumKsPerBox =     1    1
+MyPE =     1, K index =     1
+MyPE =     2, NumEs, NumEsPerBox =    60   30
+MyPE =     2, NumKs, NumKsPerBox =     1    1
+MyPE =     2, K index =     1
+MyPE =     3, NumEs, NumEsPerBox =    60   30
+MyPE =     3, NumKs, NumKsPerBox =     1    1
+MyPE =     4, NumEs, NumEsPerBox =    60   30
+MyPE =     4, NumKs, NumKsPerBox =     1    1
+MyPE =     4, K index =     1
+MyPE =     3, K index =     1
+MyPE =     5, NumEs, NumEsPerBox =    60   30
+MyPE =     5, NumKs, NumKsPerBox =     1    1
+MyPE =     5, K index =     1
+
+================================================================================
+
+The number of processes that write output data:      1
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4369825095107D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4369825095107D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4369837398599D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4369837398599D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ ! VALUE: -0.4369837398599D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.1078626255646D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.1078626255646D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.1078419049083D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.1078419049083D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.1078419049083D-04                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4174434899085D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4174434899085D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4174396901035D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4174396901035D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.4174396901035D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.3135915107144D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.3135915107144D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.3136369671530D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.3136369671530D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.3136369671530D-05                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.8834977256118D+00                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: negative qint                                                     !
+ ! VALUE: -0.8834977256118D+00                                                !
+ ! AT: updateFermiEnergy
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ERROR: rho0(ir) < 0
+VALUE:     -0.1028235D-04
+STOP AT constructChargeDensity

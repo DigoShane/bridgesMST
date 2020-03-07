@@ -1,0 +1,10 @@
+This has been created to test Full Potential calculation performed without P3DFFT. The steps are
+1. Remove P3DFFT from the linking.
+2. Run it on Cu to see if everything runs fine.
+   a. LSMS calcualtion works fine
+   b. Facing some problem with KKR calculations.
+      Got this to work with 4x4x4 k points for Brillouin Zone integration.
+3. substitute in a 3n atom per unit cell calculation; also try 5n and 7n.
+   Ans-> Didn't work, went down to 4x4x4 grid piint with -5.3 as the bottom of the valence band for a Graphite stacking. 
+================================================================================================
+4. If the above is succssful, then run on graphene.

@@ -1,0 +1,22 @@
+This is to run a 3Atom/unit cell Graphite calculation
+1. position.dat
+      2.683410903782
+        1.50000000000    0.86602540378    0.00000000000
+        1.50000000000   -0.86602540378    0.00000000000
+        0.00000000000    0.00000000000    4.71549295775
+        C  0.00000000000      0.00000000000      0.00000000000
+        C  0.50000000000      0.86602540378      0.00000000000
+       Va  1.00000000000      0.00000000000      0.00000000000
+2. i_lsms_C
+       No. Iterations (> 0)       ::  100
+       No. Atoms in System (> 0)  ::  3
+       Potential Type (>= 0)      ::  0
+3. info_table_C
+       Default Potential Input File Name  ::  C_ascii_v, Va_ascii_v
+       Default Potential Input File Form  ::  0
+
+====================================================================
+Here we test out the bottom of the fermi energy.
+1. Top = 0, Bottom =-0.4
+2. Top = 0, Bottom =-0.6
+3. Top = 0, Bottom =-5.3

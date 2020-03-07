@@ -1,0 +1,177 @@
+Graphene ABAB stacked, unit cell has 4 atoms, 
+a=1.42 A c=3.348 A
+A->(0,0,0) B->a(0.5,0.866,0)
+A'->a(0,0,0.5*c/a) B'->a(-0.5,-0.866,0.5*c/a)
+where A' and B' are in the second cell. The lattice vectors are
+a_1=a(1.5,-0.866,0)
+a_2=a(1.5, 0.866,0)
+a_3=a(0,0,c/a)
+
+============================================================================
+We want to first run a few iterations (4) with ascii input file and obtain 
+a C_fp_w (modified form usual C_mt_w) file which we will then use to run fp
+calculations. Hoping that(questionable grammar), since the no. of atoms per
+unit cell is even, we are good.
+
+1. Ascii input
+  I . info_table_C
+Default Potential Input File Name  ::  C_ascii_v, Va_ascii_v
+#Default Potential Input File Name  ::  C_mt_v
+Default Potential Input File Form  ::  0
+Default Potential Output File Name ::  C_fp_w
+Default Potential Output File Form ::  1
+Default Pot  Mix Param.   :: 0.0100
+  II. i_lsms_C
+Valence Band Bottom Est.   ::  -0.3
+No. Atoms in System (> 0)  ::  4
+Mixing algorithm           ::  0
+2. FP Calc
+  I  . Cmd Line
+mv C_fp_w C_fp_v
+  II . info_table
+#Default Potential Input File Name  ::  C_ascii_v, Va_ascii_v
+Default Potential Input File Name  ::  C_fp_v
+Default Potential Input File Form  ::  1
+Default Potential Output File Name ::  C_fp_w
+Default Potential Output File Form ::  1
+Default Lmax-T matrix     :: 4
+Default Lmax-Wave Func    :: 4
+Default Lmax-Potential    :: 8
+Default Lmax-Trunc Pot    :: 10
+Default Lmax-Charge Den   :: 8
+Default Lmax-Step Func    :: 14
+Default Pot  Mix Param.   :: 0.0100
+  III. i_lsms_C
+No. Iterations (> 0)       ::  10 !! as a test case, wil be inc later
+No. Atoms in System (> 0)  ::  4
+Potential Type (>= 0)      ::  3
+
+======================================================================
+Increase the Valence Band Bottom Est. over the next couple of trials.
+======================================================================
+
+As of now things are not working out for Graphite. the error that we
+got for Ascii input was that the Y_{00} component of the charge density
+was becoming negative. We got over this by using a simple mixing scheme
+but with a small mixing parameter. Then when used the output from the ascii 
+run input for Full Potential run, we got an error saying 
+
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+
+and
+
+
+ERROR: ebot > etop
+
+
+We believe the former is becuase of skewed unit cell, while the latter is because
+when calculating the DOS using "mufind", we are using a Newton/secant type method
+where a the formulae for the  increment \Delta E is found by 
+\Delta E=[N_e-N(E)]/n(E)----->(*)
+where N_e is the total no. of valence electrons. N(E) is the integrated DOS and
+n(E)=dN(E)/dE is the DOS. For metals n(E) is bounded away form 0 , this is due to
+the fact that  for metallic system we have overlap of the density of states. However,
+the situation for semi-condictors/insulators is different. The fermi Energy Ef lies
+in band gap thus N(Ef)=N_e for only within the band gap. Thus at a point due iterating
+(*), we will have E in he band gap. Then we have N(E)\neq 0 but n(E) is 0 there and thus
+(*) explodes.
+
+The nohup file here is broken up into three parts the first run was with ebot -0.3 and the
+second run is for ebot -0.6  while the third run is with ebot -0.4. I got the same error in
+both cases. As of now, I believe that as when n(E)= very small, this gives us \Delta E large
+negative no. which eventually cause, the guess for the fermi energy to be smaller than ebot.
+Test out in mufind to be sure.
+==============================================================================================
+
+In order to get rid of the first problem, we repeat everything with diamond. This will
+be the proof of concept we are looking for.
+==============================================================================================
+ DIAMOND
+==============================================================================================
+I. position.dat:-
+The Lattice for Diamond can be written as two interpenetraitng FCC lattice, thus we have an FCC
+lattice with 2 atom basis, first atom is at the origin and the second is at a/4(1,1,1). The
+position.dat file is as follows
+6.746321779227
+  0.00000000000    0.50000000000    0.50000000000
+  0.50000000000    0.00000000000    0.50000000000
+  0.50000000000    0.50000000000    0.00000000000
+  C  0.00000000000      0.00000000000      0.00000000000
+  C  0.25000000000      0.25000000000      0.25000000000
+
+II. Trial I - Ascii input for MT
+  1. info_table
+Default Potential Input File Name  ::  C_ascii_v, Va_ascii_v
+#Default Potential Input File Name  ::  C_fp_v
+Default Potential Input File Form  ::  0
+Default Potential Output File Name ::  C_fp_w
+Default Potential Output File Form ::  1
+Default Pot  Mix Param.   :: 0.1000
+  2. i_lsms
+No. Iterations (> 0)       ::  10
+Valence Band Bottom Est.   ::  -0.4
+No. Atoms in System (> 0)  ::  2
+Alloy System Description   ::  C, Diamond structure
+Potential Type (>= 0)      ::  0
+III. Trial II - XDR input for FP
+  1. Cmd Line
+mv C_fp_w C_fp_v
+  2. info_table
+#Default Potential Input File Name  ::  C_ascii_v, Va_ascii_v
+Default Potential Input File Name  ::  C_fp_v
+Default Potential Input File Form  ::  1
+Default Potential Output File Name ::  C_fp_w
+Default Potential Output File Form ::  1
+Default Lmax-T matrix     :: 4
+Default Lmax-Wave Func    :: 4
+Default Lmax-Potential    :: 8
+Default Lmax-Trunc Pot    :: 10
+Default Lmax-Charge Den   :: 8
+Default Lmax-Step Func    :: 14
+Default Pot  Mix Param.   :: 0.1000
+  3. i_lsms_C
+No. Iterations (> 0)       ::  10
+Valence Band Bottom Est.   ::  -0.4
+No. Atoms in System (> 0)  ::  2
+Alloy System Description   ::  C, Diamond structure
+Potential Type (>= 0)      ::  3
+
+IV. Trial III - XDR input for FP
+  1. Cmd Line
+mv C_fp_w C_fp_v
+  2. In the main code (GFMethodModule), I switched off the !!xDx!!, check that I had put. Followed by a make.
+  3. i_lsms
+No. Iterations (> 0)       ::  100
+
+V. Trial IV - XDR input for FP.
+We want to keep the iteration going till we hit convergence.
+  1. Cmd Line
+mv C_fp_w C_fp_v
+Got a Converged result in just 7 iterations.
+
+V. Trial IV - XDR input for FP print DOS
+  1. Cmd Line
+mv C_fp_w C_fp_v
+  2. i_lsms
+DOS Run ID              ::  1
+DOS Print ID            ::  1
+
+VI. Trial V -XDR input for FP print DOS
+NB-> This is added based on the observation that DOS of Diamond in literature has a range of [-30,20].
+I was calculating with the assumption that the bottom of the band is -0.4. Now shifted this to -30.
+
+  1. i_lsms
+No. Iterations (> 0)       ::  200
+Valence Band Bottom Est.   ::  -30.0   
+DOS Run ID              ::  0
+DOS Print ID            ::  1
+Real Axis Bottom, erbot    :: -30.000
+
+We got a convergence error at this step, with Charge density going negative.
+**********************************************************************************************************
+VII. Trial VI - XDR input for FP print DOS
+  1. Cmd Line
+mv C_fp_w C_fp_v
+  2. i_lsms
+DOS Run ID              ::  1
+DOS Print ID            ::  1

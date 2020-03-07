@@ -1,0 +1,1368 @@
+================================================================================================================================================================
+TRIAL I
+================================================================================================================================================================
+ 
+             ********************************************************
+             *                                                      *
+             *              Fortran 90 Interface Module             *
+             *                                                      *
+             *                         For                          *
+             *                                                      *
+             *              MPI Message Passing Library             *
+             *                                                      *
+             *                   Version No. 2.0k                   *
+             *                                                      *
+             ********************************************************
+  
+ CHARACTER_BYTES =            1
+ INTEGER_BYTES   =            4
+ REAL_BYTES      =            8
+ COMPLEX_BYTES   =           16
+ ADDRESS_BYTES   =            8
+  
+ Number of Procs =            8
+  
+Execution starts at 23:40:28, 04-16-2019 on     8 nodes
+#-------------------------------------------------------------------------------
+#
+#
+#           ********************************************************
+#           *                                                      *
+#           *    Full-Potential Multiple Scattering Theory Based   *
+#           *                                                      *
+#           *  Ab Initio Electronic Structure Calculation Package  *
+#           *                                                      *
+#           ********************************************************
+#
+#
+#   username                 : shohams
+#   system name              : rigoletto.psc.edu
+#   code compiled            : Friday, April 12 2019 11:22:09
+#   Source code version      : v2.4.2.5
+#-------------------------------------------------------------------------------
+
+ The Position Data File: ./position.dat
+
+ The Position Data is read successfully!
+
+
+================================================================================
+
+ The lattice system is: Cubic       
+
+================================================================================
+
+            *********************************************
+            *     Output from createParallelization     *
+            *            in ProcMappingModule           *
+            *********************************************
+
+The number of processors in each box :    2
+The number of repeats along k-dimen. :    1
+The number of repeats along e-dimen. :    4
+Dimension of the box :    2 x    1 x    1
+MyPE =     0, NumEs, NumEsPerBox =    60   15
+MyPE =     0, E index =     1    5    9   13   17   21   25   29   33   37   41   45   49   53   57
+MyPE =     0, NumKs, NumKsPerBox =     1    1
+MyPE =     0, K index =     1
+K index =     1
+Process =     0
+MyPE =     1, NumEs, NumEsPerBox =    60   15
+MyPE =     1, E index =     2    6   10   14   18   22   26   30   34   38   42   46   50   54   58
+MyPE =     1, NumKs, NumKsPerBox =     1    1
+MyPE =     1, K index =     1
+MyPE =     2, NumEs, NumEsPerBox =    60   15
+MyPE =     2, E index =     3    7   11   15   19   23   27   31   35   39   43   47   51   55   59
+MyPE =     2, NumKs, NumKsPerBox =     1    1
+MyPE =     2, K index =     1
+MyPE =     3, NumEs, NumEsPerBox =    60   15
+MyPE =     3, E index =     4    8   12   16   20   24   28   32   36   40   44   48   52   56   60
+MyPE =     3, NumKs, NumKsPerBox =     1    1
+MyPE =     3, K index =     1
+MyPE =     4, NumEs, NumEsPerBox =    60   15
+MyPE =     4, E index =     1    5    9   13   17   21   25   29   33   37   41   45   49   53   57
+MyPE =     4, NumKs, NumKsPerBox =     1    1
+MyPE =     5, NumEs, NumEsPerBox =    60   15
+MyPE =     6, NumEs, NumEsPerBox =    60   15
+MyPE =     6, E index =     3    7   11   15   19   23   27   31   35   39   43   47   51   55   59
+MyPE =     6, NumKs, NumKsPerBox =     1    1
+MyPE =     6, K index =     1
+MyPE =     4, K index =     1
+MyPE =     7, NumEs, NumEsPerBox =    60   15
+MyPE =     7, E index =     4    8   12   16   20   24   28   32   36   40   44   48   52   56   60
+MyPE =     5, E index =     2    6   10   14   18   22   26   30   34   38   42   46   50   54   58
+MyPE =     5, NumKs, NumKsPerBox =     1    1
+MyPE =     7, NumKs, NumKsPerBox =     1    1
+MyPE =     7, K index =     1
+MyPE =     5, K index =     1
+
+================================================================================
+
+The number of processes that write output data:      1
+============================================================================================================================================================================================
+Trial II Full Potential with XDR, 10 iterations.  
+============================================================================================================================================================================================
+             ********************************************************
+             *                                                      *
+             *              Fortran 90 Interface Module             *
+             *                                                      *
+             *                         For                          *
+             *                                                      *
+             *              MPI Message Passing Library             *
+             *                                                      *
+             *                   Version No. 2.0k                   *
+             *                                                      *
+             ********************************************************
+  
+ CHARACTER_BYTES =            1
+ INTEGER_BYTES   =            4
+ REAL_BYTES      =            8
+ COMPLEX_BYTES   =           16
+ ADDRESS_BYTES   =            8
+  
+ Number of Procs =            8
+  
+Execution starts at 00:05:15, 04-17-2019 on     8 nodes
+#-------------------------------------------------------------------------------
+#
+#
+#           ********************************************************
+#           *                                                      *
+#           *    Full-Potential Multiple Scattering Theory Based   *
+#           *                                                      *
+#           *  Ab Initio Electronic Structure Calculation Package  *
+#           *                                                      *
+#           ********************************************************
+#
+#
+#   username                 : shohams
+#   system name              : rigoletto.psc.edu
+#   code compiled            : Friday, April 12 2019 11:22:09
+#   Source code version      : v2.4.2.5
+#-------------------------------------------------------------------------------
+
+ The Position Data File: ./position.dat
+
+ The Position Data is read successfully!
+
+
+================================================================================
+
+ The lattice system is: Cubic       
+
+================================================================================
+
+            *********************************************
+            *     Output from createParallelization     *
+            *            in ProcMappingModule           *
+            *********************************************
+
+The number of processors in each box :    2
+The number of repeats along k-dimen. :    1
+The number of repeats along e-dimen. :    4
+Dimension of the box :    2 x    1 x    1
+MyPE =     0, NumEs, NumEsPerBox =    60   15
+MyPE =     0, E index =     1    5    9   13   17   21   25   29   33   37   41   45   49   53   57
+MyPE =     0, NumKs, NumKsPerBox =    25   25
+MyPE =     0, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+Process =     0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0, ...,...
+MyPE =     1, NumEs, NumEsPerBox =    60   15
+MyPE =     1, E index =     2    6   10   14   18   22   26   30   34   38   42   46   50   54   58
+MyPE =     1, NumKs, NumKsPerBox =    25   25
+MyPE =     1, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     3, NumEs, NumEsPerBox =    60   15
+MyPE =     3, E index =     4    8   12   16   20   24   28   32   36   40   44   48   52   56   60
+MyPE =     3, NumKs, NumKsPerBox =    25   25
+MyPE =     3, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     2, NumEs, NumEsPerBox =    60   15
+MyPE =     5, NumEs, NumEsPerBox =    60   15
+MyPE =     6, NumEs, NumEsPerBox =    60   15
+MyPE =     6, E index =     3    7   11   15   19   23   27   31   35   39   43   47   51   55   59
+MyPE =     7, NumEs, NumEsPerBox =    60   15
+MyPE =     7, E index =     4    8   12   16   20   24   28   32   36   40   44   48   52   56   60
+MyPE =     7, NumKs, NumKsPerBox =    25   25
+MyPE =     5, E index =     2    6   10   14   18   22   26   30   34   38   42   46   50   54   58
+MyPE =     5, NumKs, NumKsPerBox =    25   25
+MyPE =     5, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     6, NumKs, NumKsPerBox =    25   25
+MyPE =     6, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     7, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     2, E index =     3    7   11   15   19   23   27   31   35   39   43   47   51   55   59
+MyPE =     2, NumKs, NumKsPerBox =    25   25
+MyPE =     2, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     4, NumEs, NumEsPerBox =    60   15
+MyPE =     4, E index =     1    5    9   13   17   21   25   29   33   37   41   45   49   53   57
+MyPE =     4, NumKs, NumKsPerBox =    25   25
+MyPE =     4, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+
+================================================================================
+
+The number of processes that write output data:      1
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ UC= F
+ etop-ebot=   1.14233368971091     
+ LC= F
+ UC= F
+ etop-ebot=   1.14233368971091     
+ LC= F
+ UC= F
+ etop-ebot=   1.14233368971091     
+ LC= F
+ UC= F
+ etop-ebot=   1.14233368971091     
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.14233368971091     
+ UC= F
+ etop-ebot=   1.14233368971091     
+ LC= F
+ UC= F
+ etop-ebot=   1.14233368971091     
+ LC= F
+ UC= F
+ etop-ebot=   1.14233368971091     
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ UC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.18122214395427     
+ LC= F
+ UC= F
+ etop-ebot=   1.18122214395427     
+ LC= F
+ UC= F
+ etop-ebot=   1.18122214395427     
+ etop-ebot=   1.18122214395427     
+ LC= T
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.18122214395427     
+ UC= F
+ etop-ebot=   1.18122214395427     
+ LC= F
+ UC= F
+ etop-ebot=   1.18122214395427     
+ LC= F
+ UC= F
+ etop-ebot=   1.18122214395427     
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ UC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.19084187603303     
+ LC= F
+ UC= F
+ etop-ebot=   1.19084187603302     
+ LC= F
+ UC= F
+ etop-ebot=   1.19084187603302     
+ etop-ebot=   1.19084187603303     
+ LC= T
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.19084187603302     
+ UC= F
+ etop-ebot=   1.19084187603303     
+ LC= F
+ UC= F
+ etop-ebot=   1.19084187603302     
+ LC= F
+ UC= F
+ etop-ebot=   1.19084187603303     
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ UC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.14648137377540     
+ LC= F
+ UC= F
+ etop-ebot=   1.14648137377541     
+ LC= F
+ UC= F
+ etop-ebot=   1.14648137377542     
+ etop-ebot=   1.14648137377540     
+ LC= T
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.14648137377542     
+ UC= F
+ etop-ebot=   1.14648137377540     
+ LC= F
+ UC= F
+ etop-ebot=   1.14648137377541     
+ LC= F
+ UC= F
+ etop-ebot=   1.14648137377540     
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ UC= F
+ LC= F
+ UC= F
+ etop-ebot=  0.967772379079245     
+ LC= F
+ UC= F
+ etop-ebot=  0.967772379079256     
+ LC= F
+ UC= F
+ etop-ebot=  0.967772379079258     
+ etop-ebot=  0.967772379079245     
+ LC= T
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ LC= F
+ UC= F
+ etop-ebot=  0.967772379079258     
+ UC= F
+ etop-ebot=  0.967772379079245     
+ LC= F
+ UC= F
+ etop-ebot=  0.967772379079256     
+ LC= F
+ UC= F
+ etop-ebot=  0.967772379079245     
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ UC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.16777237907924     
+ LC= F
+ UC= F
+ etop-ebot=   1.16777237907926     
+ LC= F
+ UC= F
+ etop-ebot=   1.16777237907926     
+ etop-ebot=   1.16777237907924     
+ LC= T
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.16777237907926     
+ UC= F
+ etop-ebot=   1.16777237907924     
+ LC= F
+ UC= F
+ etop-ebot=   1.16777237907926     
+ LC= F
+ UC= F
+ etop-ebot=   1.16777237907924     
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ UC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.37492112941660     
+ LC= F
+ UC= F
+ etop-ebot=   1.37492112941655     
+ LC= F
+ UC= F
+ etop-ebot=   1.37492112941654     
+ etop-ebot=   1.37492112941660     
+ LC= T
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.37492112941654     
+ UC= F
+ etop-ebot=   1.37492112941660     
+ LC= F
+ UC= F
+ etop-ebot=   1.37492112941655     
+ LC= F
+ UC= F
+ etop-ebot=   1.37492112941660     
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ UC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.38274744742777     
+ LC= F
+ UC= F
+ etop-ebot=   1.38274744742790     
+ LC= F
+ UC= F
+ etop-ebot=   1.38274744742793     
+ etop-ebot=   1.38274744742776     
+ LC= T
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.38274744742793     
+ UC= F
+ etop-ebot=   1.38274744742777     
+ LC= F
+ UC= F
+ etop-ebot=   1.38274744742790     
+ LC= F
+ UC= F
+ etop-ebot=   1.38274744742776     
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ UC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.38833074357500     
+ LC= F
+ UC= F
+ etop-ebot=   1.38833074357471     
+ LC= F
+ UC= F
+ etop-ebot=   1.38833074357465     
+ etop-ebot=   1.38833074357501     
+ LC= T
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.38833074357465     
+ UC= F
+ etop-ebot=   1.38833074357500     
+ LC= F
+ UC= F
+ etop-ebot=   1.38833074357471     
+ LC= F
+ UC= F
+ etop-ebot=   1.38833074357501     
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ UC= F
+ etop-ebot=   1.39161940339080     
+ LC= F
+ UC= F
+ etop-ebot=   1.39161940339082     
+ LC= F
+ UC= F
+ etop-ebot=   1.39161940339138     
+ LC= F
+ UC= F
+ etop-ebot=   1.39161940339149     
+ LC= T
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= T
+ UC= F
+ etop-ebot= -2.000000000000000E+020
+ LC= F
+ LC= F
+ UC= F
+ etop-ebot=   1.39161940339149     
+ UC= F
+ etop-ebot=   1.39161940339082     
+ LC= F
+ UC= F
+ etop-ebot=   1.39161940339138     
+ LC= F
+ UC= F
+ etop-ebot=   1.39161940339080     
+============================================================================================================================================================================================
+Trial III FP with XDR 100 Iteration
+============================================================================================================================================================================================
+  
+             ********************************************************
+             *                                                      *
+             *              Fortran 90 Interface Module             *
+             *                                                      *
+             *                         For                          *
+             *                                                      *
+             *              MPI Message Passing Library             *
+             *                                                      *
+             *                   Version No. 2.0k                   *
+             *                                                      *
+             ********************************************************
+  
+ CHARACTER_BYTES =            1
+ INTEGER_BYTES   =            4
+ REAL_BYTES      =            8
+ COMPLEX_BYTES   =           16
+ ADDRESS_BYTES   =            8
+  
+ Number of Procs =            8
+  
+Execution starts at 01:06:43, 04-17-2019 on     8 nodes
+#-------------------------------------------------------------------------------
+#
+#
+#           ********************************************************
+#           *                                                      *
+#           *    Full-Potential Multiple Scattering Theory Based   *
+#           *                                                      *
+#           *  Ab Initio Electronic Structure Calculation Package  *
+#           *                                                      *
+#           ********************************************************
+#
+#
+#   username                 : shohams
+#   system name              : rigoletto.psc.edu
+#   code compiled            : Wednesday, April 17 2019 01:04:35
+#   Source code version      : v2.4.2.5
+#-------------------------------------------------------------------------------
+
+ The Position Data File: ./position.dat
+
+ The Position Data is read successfully!
+
+
+================================================================================
+
+ The lattice system is: Cubic       
+
+================================================================================
+
+            *********************************************
+            *     Output from createParallelization     *
+            *            in ProcMappingModule           *
+            *********************************************
+
+The number of processors in each box :    2
+The number of repeats along k-dimen. :    1
+The number of repeats along e-dimen. :    4
+Dimension of the box :    2 x    1 x    1
+MyPE =     0, NumEs, NumEsPerBox =    60   15
+MyPE =     0, E index =     1    5    9   13   17   21   25   29   33   37   41   45   49   53   57
+MyPE =     0, NumKs, NumKsPerBox =    25   25
+MyPE =     0, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+Process =     0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0, ...,...
+MyPE =     2, NumEs, NumEsPerBox =    60   15
+MyPE =     2, E index =     3    7   11   15   19   23   27   31   35   39   43   47   51   55   59
+MyPE =     3, NumEs, NumEsPerBox =    60   15
+MyPE =     3, E index =     4    8   12   16   20   24   28   32   36   40   44   48   52   56   60
+MyPE =     3, NumKs, NumKsPerBox =    25   25
+MyPE =     3, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     2, NumKs, NumKsPerBox =    25   25
+MyPE =     2, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     5, NumEs, NumEsPerBox =    60   15
+MyPE =     5, E index =     2    6   10   14   18   22   26   30   34   38   42   46   50   54   58
+MyPE =     5, NumKs, NumKsPerBox =    25   25
+MyPE =     6, NumEs, NumEsPerBox =    60   15
+MyPE =     6, E index =     3    7   11   15   19   23   27   31   35   39   43   47   51   55   59
+MyPE =     6, NumKs, NumKsPerBox =    25   25
+MyPE =     6, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     5, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     1, NumEs, NumEsPerBox =    60   15
+MyPE =     1, E index =     2    6   10   14   18   22   26   30   34   38   42   46   50   54   58
+MyPE =     1, NumKs, NumKsPerBox =    25   25
+MyPE =     1, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     7, NumEs, NumEsPerBox =    60   15
+MyPE =     7, E index =     4    8   12   16   20   24   28   32   36   40   44   48   52   56   60
+MyPE =     4, NumEs, NumEsPerBox =    60   15
+MyPE =     7, NumKs, NumKsPerBox =    25   25
+MyPE =     7, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     4, E index =     1    5    9   13   17   21   25   29   33   37   41   45   49   53   57
+MyPE =     4, NumKs, NumKsPerBox =    25   25
+MyPE =     4, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+
+================================================================================
+
+The number of processes that write output data:      1
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+============================================================================================================================================================================================
+Trial IV FP with XDR 100 Iteration
+============================================================================================================================================================================================
+  
+             ********************************************************
+             *                                                      *
+             *              Fortran 90 Interface Module             *
+             *                                                      *
+             *                         For                          *
+             *                                                      *
+             *              MPI Message Passing Library             *
+             *                                                      *
+             *                   Version No. 2.0k                   *
+             *                                                      *
+             ********************************************************
+  
+ CHARACTER_BYTES =            1
+ INTEGER_BYTES   =            4
+ REAL_BYTES      =            8
+ COMPLEX_BYTES   =           16
+ ADDRESS_BYTES   =            8
+  
+ Number of Procs =            8
+  
+Execution starts at 12:47:25, 04-17-2019 on     8 nodes
+#-------------------------------------------------------------------------------
+#
+#
+#           ********************************************************
+#           *                                                      *
+#           *    Full-Potential Multiple Scattering Theory Based   *
+#           *                                                      *
+#           *  Ab Initio Electronic Structure Calculation Package  *
+#           *                                                      *
+#           ********************************************************
+#
+#
+#   username                 : shohams
+#   system name              : rigoletto.psc.edu
+#   code compiled            : Wednesday, April 17 2019 01:04:35
+#   Source code version      : v2.4.2.5
+#-------------------------------------------------------------------------------
+
+ The Position Data File: ./position.dat
+
+ The Position Data is read successfully!
+
+
+================================================================================
+
+ The lattice system is: Cubic       
+
+================================================================================
+
+            *********************************************
+            *     Output from createParallelization     *
+            *            in ProcMappingModule           *
+            *********************************************
+
+The number of processors in each box :    2
+The number of repeats along k-dimen. :    1
+The number of repeats along e-dimen. :    4
+Dimension of the box :    2 x    1 x    1
+MyPE =     0, NumEs, NumEsPerBox =    60   15
+MyPE =     0, E index =     1    5    9   13   17   21   25   29   33   37   41   45   49   53   57
+MyPE =     0, NumKs, NumKsPerBox =    25   25
+MyPE =     0, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+Process =     0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0, ...,...
+MyPE =     1, NumEs, NumEsPerBox =    60   15
+MyPE =     1, E index =     2    6   10   14   18   22   26   30   34   38   42   46   50   54   58
+MyPE =     1, NumKs, NumKsPerBox =    25   25
+MyPE =     1, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     2, NumEs, NumEsPerBox =    60   15
+MyPE =     2, E index =     3    7   11   15   19   23   27   31   35   39   43   47   51   55   59
+MyPE =     3, NumEs, NumEsPerBox =    60   15
+MyPE =     3, E index =     4    8   12   16   20   24   28   32   36   40   44   48   52   56   60
+MyPE =     3, NumKs, NumKsPerBox =    25   25
+MyPE =     3, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     4, NumEs, NumEsPerBox =    60   15
+MyPE =     4, E index =     1    5    9   13   17   21   25   29   33   37   41   45   49   53   57
+MyPE =     4, NumKs, NumKsPerBox =    25   25
+MyPE =     4, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     5, NumEs, NumEsPerBox =    60   15
+MyPE =     5, E index =     2    6   10   14   18   22   26   30   34   38   42   46   50   54   58
+MyPE =     5, NumKs, NumKsPerBox =    25   25
+MyPE =     5, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     7, NumEs, NumEsPerBox =    60   15
+MyPE =     7, E index =     4    8   12   16   20   24   28   32   36   40   44   48   52   56   60
+MyPE =     7, NumKs, NumKsPerBox =    25   25
+MyPE =     7, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     2, NumKs, NumKsPerBox =    25   25
+MyPE =     2, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     6, NumEs, NumEsPerBox =    60   15
+MyPE =     6, E index =     3    7   11   15   19   23   27   31   35   39   43   47   51   55   59
+MyPE =     6, NumKs, NumKsPerBox =    25   25
+MyPE =     6, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+
+================================================================================
+
+The number of processes that write output data:      1
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+============================================================================================================================================================================================
+Trial V FP with XDR 1 Iteration, to Print DOS.
+============================================================================================================================================================================================
+
+  
+             ********************************************************
+             *                                                      *
+             *              Fortran 90 Interface Module             *
+             *                                                      *
+             *                         For                          *
+             *                                                      *
+             *              MPI Message Passing Library             *
+             *                                                      *
+             *                   Version No. 2.0k                   *
+             *                                                      *
+             ********************************************************
+  
+ CHARACTER_BYTES =            1
+ INTEGER_BYTES   =            4
+ REAL_BYTES      =            8
+ COMPLEX_BYTES   =           16
+ ADDRESS_BYTES   =            8
+  
+ Number of Procs =            8
+  
+Execution starts at 21:49:21, 04-18-2019 on     8 nodes
+#-------------------------------------------------------------------------------
+#
+#
+#           ********************************************************
+#           *                                                      *
+#           *    Full-Potential Multiple Scattering Theory Based   *
+#           *                                                      *
+#           *  Ab Initio Electronic Structure Calculation Package  *
+#           *                                                      *
+#           ********************************************************
+#
+#
+#   username                 : shohams
+#   system name              : rigoletto.psc.edu
+#   code compiled            : Wednesday, April 17 2019 01:04:35
+#   Source code version      : v2.4.2.5
+#-------------------------------------------------------------------------------
+
+ The Position Data File: ./position.dat
+
+ The Position Data is read successfully!
+
+
+================================================================================
+
+ The lattice system is: Cubic       
+
+================================================================================
+
+            *********************************************
+            *     Output from createParallelization     *
+            *            in ProcMappingModule           *
+            *********************************************
+
+The number of processors in each box :    2
+The number of repeats along k-dimen. :    1
+The number of repeats along e-dimen. :    4
+Dimension of the box :    2 x    1 x    1
+MyPE =     0, NumEs, NumEsPerBox =    60   15
+MyPE =     0, E index =     1    5    9   13   17   21   25   29   33   37   41   45   49   53   57
+MyPE =     0, NumKs, NumKsPerBox =    25   25
+MyPE =     0, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+Process =     0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0, ...,...
+MyPE =     1, NumEs, NumEsPerBox =    60   15
+MyPE =     1, E index =     2    6   10   14   18   22   26   30   34   38   42   46   50   54   58
+MyPE =     1, NumKs, NumKsPerBox =    25   25
+MyPE =     2, NumEs, NumEsPerBox =    60   15
+MyPE =     2, E index =     3    7   11   15   19   23   27   31   35   39   43   47   51   55   59
+MyPE =     2, NumKs, NumKsPerBox =    25   25
+MyPE =     2, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     3, NumEs, NumEsPerBox =    60   15
+MyPE =     3, E index =     4    8   12   16   20   24   28   32   36   40   44   48   52   56   60
+MyPE =     3, NumKs, NumKsPerBox =    25   25
+MyPE =     1, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     3, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     4, NumEs, NumEsPerBox =    60   15
+MyPE =     4, E index =     1    5    9   13   17   21   25   29   33   37   41   45   49   53   57
+MyPE =     4, NumKs, NumKsPerBox =    25   25
+MyPE =     4, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     5, NumEs, NumEsPerBox =    60   15
+MyPE =     5, E index =     2    6   10   14   18   22   26   30   34   38   42   46   50   54   58
+MyPE =     5, NumKs, NumKsPerBox =    25   25
+MyPE =     5, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     6, NumEs, NumEsPerBox =    60   15
+MyPE =     6, E index =     3    7   11   15   19   23   27   31   35   39   43   47   51   55   59
+MyPE =     6, NumKs, NumKsPerBox =    25   25
+MyPE =     6, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+MyPE =     7, NumEs, NumEsPerBox =    60   15
+MyPE =     7, E index =     4    8   12   16   20   24   28   32   36   40   44   48   52   56   60
+MyPE =     7, NumKs, NumKsPerBox =    25   25
+MyPE =     7, K index =     1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16, ...,...
+
+================================================================================
+
+The number of processes that write output data:      1
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ !                                                                            !
+ ! WARNING: Ill condition found: Neighbor distance <= Rcs                     !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ ! VALUE:  0.2921243021457D+01   0.2921243021457D+01                          !
+ ! AT: main
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: reset evbot to a new value                                        !
+ ! VALUE: -0.2000000000000D+00                                                !
+ ! AT: calCoreStates
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: reset evbot to a new value                                        !
+ ! VALUE: -0.2000000000000D+00                                                !
+ ! AT: calCoreStates
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: qint_semi<0, likely caused by the valence band bottom being set to! high
+ ! VALUE: -0.2000000000000D+01                                                !
+ ! AT: calCoreStates
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: reset evbot to a new value                                        !
+ ! VALUE: -0.2000000000000D+00                                                !
+ ! AT: calCoreStates
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: qint_semi<0, likely caused by the valence band bottom being set to! high
+ ! VALUE: -0.2000000000000D+01                                                !
+ ! AT: calCoreStates
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: reset evbot to a new value                                        !
+ ! VALUE: -0.2000000000000D+00                                                !
+ ! AT: calCoreStates
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: qint_semi<0, likely caused by the valence band bottom being set to! high
+ ! VALUE: -0.2000000000000D+01                                                !
+ ! AT: calCoreStates
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: reset evbot to a new value                                        !
+ ! VALUE: -0.2000000000000D+00                                                !
+ ! AT: calCoreStates
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: qint_semi<0, likely caused by the valence band bottom being set to! high
+ ! VALUE: -0.2000000000000D+01                                                !
+ ! AT: calCoreStates
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ !                                                                            !
+ ! WARNING: qint_semi<0, likely caused by the valence band bottom being set to! high
+ ! VALUE: -0.2000000000000D+01                                                !
+ ! AT: calCoreStates
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: reset evbot to a new value                                        !
+ ! VALUE: -0.2000000000000D+00                                                !
+ ! AT: calCoreStates
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: qint_semi<0, likely caused by the valence band bottom being set to! high
+ ! VALUE: -0.2000000000000D+01                                                !
+ ! AT: calCoreStates
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: reset evbot to a new value                                        !
+ ! VALUE: -0.2000000000000D+00                                                !
+ ! AT: calCoreStates
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !                                                                            !
+ ! WARNING: qint_semi<0, likely caused by the valence band bottom being set to! high
+ ! VALUE: -0.2000000000000D+01                                                !
+ ! AT: calCoreStates
+ !                                                                            !
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ERROR: rho0(ir) < 0
+VALUE:     -0.2323398D+02
+STOP AT constructChargeDensity
+ERROR: rho0(ir) < 0
+VALUE:     -0.2323398D+02
+STOP AT constructChargeDensity
