@@ -1,0 +1,1 @@
+This is for performing calc without P3DFFT. This was originally done for rigoletto thus the arch file for rigoletto has P3DFFT removed.
